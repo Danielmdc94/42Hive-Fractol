@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/06 14:23:47 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/06 16:30:17 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ typedef struct s_data{
 	int		line_bytes;
 	int		endian;
 	char	*img_addr;
+	float	r_min;
+	float	r_max;
+	float	i_min;
+	float	i_max;
 }				t_data;
 
 /*-------DATA-------*/
