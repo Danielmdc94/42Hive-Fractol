@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/06 16:30:17 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:53:33 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 
 /*------COLORS------*/
 # define WHITE		0xFFFFFF
+# define BLACK		0x000000
 # define RED		0xFF0000
 # define GREEN		0x00FF00
 # define BLUE		0x0000FF
@@ -48,10 +49,10 @@ typedef struct s_data{
 	int		line_bytes;
 	int		endian;
 	char	*img_addr;
-	float	r_min;
-	float	r_max;
-	float	i_min;
-	float	i_max;
+	double	r_min;
+	double	r_max;
+	double	i_min;
+	double	i_max;
 }				t_data;
 
 /*-------DATA-------*/
@@ -62,6 +63,8 @@ int		exit_fractol(t_data *data);
 void	hook_control(t_data *data);
 void	img_pixel_put(t_data *data, int x, int y, int color);
 
-void	mandelbrot(t_data data);
+/*-------SET--------*/
+int		mandelbrot(t_data data, int x, int y);
+void	draw(t_data data);
 
 #endif
