@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   controls.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 15:40:52 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/10 20:55:52 by dpalacio         ###   ########.fr       */
+/*   Created: 2022/05/10 20:17:24 by dpalacio          #+#    #+#             */
+/*   Updated: 2022/05/10 20:46:21 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	e_print_exit(char *e_string, t_data *data)
+int	on_keydown(int key, t_data *data)
 {
-	ft_putendl(e_string);
-	exit_fractol(data);
-}
+	if (key == 53)
+	{
+		exit_fractol(data);
+	}
 
-int	exit_fractol(t_data *data)
-{
-	exit(0);
+	if (key == 123)
+	{
+	}
+	if (key == 124)
+	{
+	}
+	if (key == 125)
+	{
+	}
+	if (key == 126)
+	{
+	}
+	draw(data);
+	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
+	ft_putnbr(key);
+	ft_putchar('\n');
 	return (1);
-}
-
-int	main(int argc, char **argv)
-{
-	t_data	data;
-
-	if (argc != 2)
-		e_print_exit("Usage: ./fractol <fractol_name>", &data);
-	data_init(&data);
-	draw(&data);
-	mlx_put_image_to_window(data.mlx, data.win, data.img, 0, 0);
-	hook_control(&data);
-	mlx_loop(data.mlx);
 }

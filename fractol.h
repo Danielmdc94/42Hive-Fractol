@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/10 16:53:33 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/10 20:55:54 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ typedef struct s_data{
 	double	r_max;
 	double	i_min;
 	double	i_max;
+	int		width;
+	int		height;
 }				t_data;
 
 /*-------DATA-------*/
@@ -62,9 +64,13 @@ int		exit_fractol(t_data *data);
 /*-------MLX--------*/
 void	hook_control(t_data *data);
 void	img_pixel_put(t_data *data, int x, int y, int color);
+void	data_init(t_data *data);
 
 /*-------SET--------*/
-int		mandelbrot(t_data data, int x, int y);
-void	draw(t_data data);
+int		mandelbrot(t_data *data, int x, int y);
+void	draw(t_data *data);
+
+/*-----CONTROLS-----*/
+int		on_keydown(int key, t_data *data);
 
 #endif

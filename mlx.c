@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/04 13:57:37 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/10 20:55:56 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	hook_control(t_data *data)
 {
 //	mlx_hook(data->win, 3, 0, on_keyup, data);
-//	mlx_hook(data->win, 2, 0, on_keydown, data);
+	mlx_hook(data->win, 2, 0, on_keydown, data);
 //	mlx_hook(data->win, 4, 0, on_mousedown, data);
 	mlx_hook(data->win, 17, 0, exit_fractol, data);
 }
@@ -36,4 +36,17 @@ void	img_pixel_put(t_data *data, int x, int y, int color)
 			e_print_exit("Error(1): Bad allocated pixel", data);
 		*(unsigned int *)pixel = color;
 	}
+}
+
+void	data_init(t_data *data)
+{
+	data->mlx = mlx_init();
+	data->win = mlx_new_window(data->mlx, WIN_WIDTH, WIN_HEIGHT, "fractol");
+	data->img = mlx_new_image(data->mlx, WIN_WIDTH, WIN_HEIGHT);
+	data->img_addr = mlx_get_data_addr(data->img, &data->px_bits,
+			&data->line_bytes, &data->endian);
+	data->r_min = -2;
+	data->r_max = 0.47;
+	data->i_min = -1.12;
+	data->i_max = 1.12;
 }
