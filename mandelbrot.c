@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:39 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/06 17:07:29 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:40:55 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,40 +38,36 @@ void	mandelbrot(t_data data)
 	data.i_min = -1;
 	data.i_max = 1;
 
-	x = 0;
-	y = 0;
+	x = 100;
+	y = 100;
 	iter = 0;
 	z = 0;
-	zr = 0;
-	zi = 0;
 
-	while (x < WIN_WIDTH)
+	while (x < WIN_WIDTH - 200)
 	{
-		while (y < WIN_HEIGHT)
+		while (y < WIN_HEIGHT - 200)
 		{
 			//ecuation start
 			cr = (x * ((data.r_max - data.r_min) / WIN_WIDTH) + data.r_min);
 			ci = (y * ((data.i_max - data.r_max) / WIN_HEIGHT) + data.i_min);
-//			printf("%f ", cr);
-			while (iter < 3 && ft_abs(zr + zi) < 16.0)
+			zr = 0;
+			zi = 0;
+			while (iter < 50 && ft_abs(zr + zi) < 16.0)
 			{
-//				printf("%f & %f  ", zr, zi);
 				temp = zr * zr - zi * zi + cr;
 				zi = 2.0 * zr * zi + ci;
 				zr = temp;
 				iter++;
-				printf("%d ", iter);
 			}
 			//ecuation finish
-			if (iter == 3)
+			if (iter == 50)
 			{
-				printf("%d ", iter);
 				img_pixel_put(&data, x, y, RED);
 			}
 			y++;
 			iter = 0;
 		}
-		y = 0;
+		y = 100;
 		x++;
 	}
 
