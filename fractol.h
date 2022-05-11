@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/10 20:55:54 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:56:11 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,14 @@ typedef struct s_data{
 	int		line_bytes;
 	int		endian;
 	char	*img_addr;
+	char	*fractal;
 	double	r_min;
 	double	r_max;
 	double	i_min;
 	double	i_max;
 	int		width;
 	int		height;
+	int		max_iter;
 }				t_data;
 
 /*-------DATA-------*/
@@ -65,12 +67,13 @@ int		exit_fractol(t_data *data);
 void	hook_control(t_data *data);
 void	img_pixel_put(t_data *data, int x, int y, int color);
 void	data_init(t_data *data);
+void	fractal_to_window(t_data *data);
 
-/*-------SET--------*/
-int		mandelbrot(t_data *data, int x, int y);
-void	draw(t_data *data);
+/*----MANDELBROT----*/
+void	mandelbrot(t_data *data);
 
 /*-----CONTROLS-----*/
 int		on_keydown(int key, t_data *data);
+int		on_mousedown(int button, int x, int y, t_data *data);
 
 #endif

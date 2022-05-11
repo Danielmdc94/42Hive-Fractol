@@ -6,41 +6,41 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:39 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/10 20:33:37 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:56:33 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	mandelbrot(t_data *data, int x, int y)
+static double	map_real(int x, t_data *data)
 {
-	int		iter;
+	double	range;
+
+	range = data->r_max - data->r_min;
+	return (x * (range / data->height) + data->r_min);
+}
+
+static double	map_imaginary(int y, t_data *data)
+{
+	double	range;
+
+	range = data->i_max - data->i_min;
+	return (y * (range / data->height) + data->i_min);
+}
+
+static int	iterate(t_data *data, int x, int y, int iter)
+{
 	double	cr;
 	double	ci;
 	double	zr;
 	double	zi;
 	double	temp;
 
-//z0=z^2 + c = c
-//z1=z^2 + c = c^2 + c
-//z2=z^2 + c = (c^2 + c)^2 + c
-//...
-
-//c = (cr + ci * I)
-//c^2 = cr^2 - ci^2 + 2 * cr * ci I
-
-/*	data->r_min = -2;
-	data->r_max = 0.47;
-	data->i_min = -1.12;
-	data->i_max = 1.12;
-*/
-	iter = 0;
-
-	cr = (x * ((data->r_max - data->r_min) / data->width) + data->r_min);
-	ci = (y * ((data->i_max - data->r_max) / data->height) + data->i_min);
+	cr = map_real(x, data);
+	ci = map_imaginary(y, data);
 	zr = 0;
 	zi = 0;
-	while (iter < 100 && ft_abs(zr + zi) < 16.0)
+	while (iter < data->max_iter && ft_abs(zr + zi) < 16.0)
 	{
 		temp = zr * zr - zi * zi + cr;
 		zi = 2.0 * zr * zi + ci;
@@ -50,32 +50,28 @@ int	mandelbrot(t_data *data, int x, int y)
 	return (iter);
 }
 
-void	draw(t_data *data)
+void	mandelbrot(t_data *data)
 {
-	int		x;
-	int		y;
+	int	x;
+	int	y;
+	int	iter;
 
-
-	mlx_clear_window(data->mlx, data->win);
-	data->width = 1000;
-	data->height = 1000;
-
-	x = 100;
-	y = 100;
-
+	x = 0;
+	y = 0;
+	iter = 0;
 	while (x < data->width)
 	{
 		while (y < data->height)
 		{
-			if (mandelbrot(data, x, y) == 100)
-			{
+			iter = iterate(data, x, y, iter);
+			if (iter == data->max_iter)
 				img_pixel_put(data, x, y, BLACK);
-			}
 			else
-				img_pixel_put(data, x, y, GREEN * mandelbrot(data, x, y) / 50);
+				img_pixel_put(data, x, y, GREEN * iter / 50);
+			iter = 0;
 			y++;
 		}
-		y = 100;
+		y = 0;
 		x++;
 	}
 }
