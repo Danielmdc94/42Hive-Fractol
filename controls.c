@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:17:24 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/12 11:57:48 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:05:31 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,9 @@ int	on_keydown(int key, t_data *data)
 
 int	on_mousedown(int button, int x, int y, t_data *data)
 {
-	if (button == 5)
-	{
-		data->r_min = data->r_min - 0.1;
-		data->r_max = data->r_max + 0.1;
-		data->i_min = data->i_min - 0.1;
-		data->i_max = data->i_max + 0.1;
-		data->max_iter--;
-	}
-		if (button == 4)
-	{
-		data->r_min = data->r_min + 0.1;
-		data->r_max = data->r_max - 0.1;
-		data->i_min = data->i_min + 0.1;
-		data->i_max = data->i_max - 0.1;
-		data->max_iter++;
-	}
+	if (button == 5 || button == 4)
+		zoom(button, data);
 	ft_putnbr(button);
 	ft_putchar('\n');
-	fractal_to_window(data);
 	return (1);
 }

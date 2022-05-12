@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/12 11:57:50 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:58:56 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_data{
 	int		width;
 	int		height;
 	int		max_iter;
+	double	zoom;
 }				t_data;
 
 /*-------DATA-------*/
@@ -71,5 +72,8 @@ int		on_mousedown(int button, int x, int y, t_data *data);
 
 /*-----KEYBOARD-----*/
 void	move_camera(int key, t_data *data);
+
+/*------MOUSE-------*/
+void	zoom(int button, t_data *data);
 
 #endif
