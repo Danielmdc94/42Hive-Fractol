@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/11 15:56:11 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:57:50 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,6 @@
 # define YELLOW		0xFFFF00
 # define CYAN		0x00FFFF
 # define MAGENTA	0xFF00FF
-
-/*----PLOT WINDOW---*/
-# define R_MIN = -2
-# define R_MAX = 1
-# define I_MIN = -1
-# define I_MAX = 1
-# define MAXITER = 100
 
 /*-------DATA-------*/
 typedef struct s_data{
@@ -75,5 +68,8 @@ void	mandelbrot(t_data *data);
 /*-----CONTROLS-----*/
 int		on_keydown(int key, t_data *data);
 int		on_mousedown(int button, int x, int y, t_data *data);
+
+/*-----KEYBOARD-----*/
+void	move_camera(int key, t_data *data);
 
 #endif

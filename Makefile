@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 15:37:29 by dpalacio          #+#    #+#              #
-#    Updated: 2022/05/10 20:22:15 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/05/12 11:20:54 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIB = -L ./libft -lft -L /usr/local/lib/ -lmlx
 
 FW = -framework OpenGL -framework AppKit
 
-SRC = main.c mlx.c mandelbrot.c controls.c
+SRC = main.c mlx.c mandelbrot.c controls.c keyboard.c
 
 OBJ = $(SRC:.c=.o)
 
