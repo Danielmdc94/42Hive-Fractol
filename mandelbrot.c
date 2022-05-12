@@ -6,13 +6,13 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:39 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/11 15:56:33 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:47:34 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static double	map_real(int x, t_data *data)
+double	map_real(int x, t_data *data)
 {
 	double	range;
 
@@ -20,7 +20,7 @@ static double	map_real(int x, t_data *data)
 	return (x * (range / data->height) + data->r_min);
 }
 
-static double	map_imaginary(int y, t_data *data)
+double	map_imaginary(int y, t_data *data)
 {
 	double	range;
 

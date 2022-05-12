@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/12 14:58:56 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:47:17 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ void	fractal_to_window(t_data *data);
 
 /*----MANDELBROT----*/
 void	mandelbrot(t_data *data);
-
+double	map_imaginary(int y, t_data *data);
+double	map_real(int x, t_data *data);
 /*-----CONTROLS-----*/
 int		on_keydown(int key, t_data *data);
 int		on_mousedown(int button, int x, int y, t_data *data);
@@ -74,6 +75,6 @@ int		on_mousedown(int button, int x, int y, t_data *data);
 void	move_camera(int key, t_data *data);
 
 /*------MOUSE-------*/
-void	zoom(int button, t_data *data);
+void	zoom(int button, int x, int y,  t_data *data);
 
 #endif

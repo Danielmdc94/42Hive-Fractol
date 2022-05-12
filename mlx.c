@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/12 14:58:57 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/12 20:05:35 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	hook_control(t_data *data)
 	mlx_hook(data->win, 4, 0, on_mousedown, data);
 //	mlx_hook(data->win, 5, 0, on_mouseup, data);
 	mlx_hook(data->win, 17, 0, exit_fractol, data);
+//	mlx_loop_hook(data->win, fractal_to_window, data);
 }
 
 //Colors the pixel in the coordinates (X, Y) of a given image
@@ -68,4 +69,8 @@ void	fractal_to_window(t_data *data)
 	else
 		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n", data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
+	mlx_string_put(data->mlx, data->win, 25, 15, WHITE,
+			ft_itoa(data->max_iter));
+	mlx_string_put(data->mlx, data->win, 25, 40, WHITE,
+			ft_itoa(data->zoom));
 }

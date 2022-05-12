@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:17:24 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/12 14:05:31 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:02:29 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	on_keydown(int key, t_data *data)
 int	on_mousedown(int button, int x, int y, t_data *data)
 {
 	if (button == 5 || button == 4)
-		zoom(button, data);
+		zoom(button, x, y, data);
 	ft_putnbr(button);
 	ft_putchar('\n');
 	return (1);
