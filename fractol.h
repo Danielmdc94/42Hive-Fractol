@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 12:13:50 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:51:44 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_data{
 	int		height;
 	int		max_iter;
 	double	zoom;
+	double	distance;
 }				t_data;
 
 /*-------DATA-------*/
