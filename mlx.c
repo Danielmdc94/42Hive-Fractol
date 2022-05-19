@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/12 20:05:35 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:10:13 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	fractal_to_window(t_data *data)
 	if (ft_strcmp(data->fractal, "mandelbrot") == 0)
 		mandelbrot(data);
 	else if (ft_strcmp(data->fractal, "julia") == 0)
-		ft_putstr("Here should be Julia");
+		julia(data);
 	else
 		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n", data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);

@@ -1,37 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 12:40:39 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 12:13:41 by dpalacio         ###   ########.fr       */
+/*   Created: 2022/05/19 11:47:17 by dpalacio          #+#    #+#             */
+/*   Updated: 2022/05/19 12:13:43 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-double	get_distance(t_data *data)
-{
-
-}
-
-double	map_real(int x, t_data *data)
-{
-	double	range;
-
-	range = data->r_max - data->r_min;
-	return (x * (range / data->height) + data->r_min);
-}
-
-double	map_imaginary(int y, t_data *data)
-{
-	double	range;
-
-	range = data->i_max - data->i_min;
-	return (y * (range / data->height) + data->i_min);
-}
 
 static int	iterate(t_data *data, int x, int y, int iter)
 {
@@ -39,13 +18,13 @@ static int	iterate(t_data *data, int x, int y, int iter)
 	double	ci;
 	double	zr;
 	double	zi;
-	double	temp;
+	double temp;
 
-	cr = map_real(x, data);
-	ci = map_imaginary(y, data);
-	zr = 0;
-	zi = 0;
-	while (iter < data->max_iter && ft_abs(zr + zi) < 16.0)
+	cr = 0.5;
+	ci = -0.5;
+	zr = map_real(x, data);
+	zi = map_imaginary(y, data);
+	while (iter < data->max_iter && zr * zr + zi * zi < 16.0)
 	{
 		temp = zr * zr - zi * zi + cr;
 		zi = 2.0 * zr * zi + ci;
@@ -55,11 +34,12 @@ static int	iterate(t_data *data, int x, int y, int iter)
 	return (iter);
 }
 
-void	mandelbrot(t_data *data)
+
+void	julia(t_data *data)
 {
-	int	x;
-	int	y;
-	int	iter;
+	int x;
+	int y;
+	int iter;
 
 	x = 0;
 	y = 0;
@@ -77,6 +57,6 @@ void	mandelbrot(t_data *data)
 			y++;
 		}
 		y = 0;
-		x++;
+		x ++;
 	}
 }
