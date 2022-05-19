@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:39 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 17:01:02 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/19 18:05:30 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static int	iterate(t_data *data, int x, int y, int iter)
 		temp = zr * zr - zi * zi + cr;
 		zi = 2.0 * zr * zi + ci;
 		zr = temp;
-
+		get_distance(data, zr, zi);
 		iter++;
 	}
 	return (iter);
@@ -87,7 +87,7 @@ void	mandelbrot(t_data *data)
 			if (iter == data->max_iter)
 				img_pixel_put(data, x, y, BLACK);
 			else
-				img_pixel_put(data, x, y, GREEN * iter / 50);
+				img_pixel_put(data, x, y, iter * GREEN / 50);
 			iter = 0;
 			y++;
 		}

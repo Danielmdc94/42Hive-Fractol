@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 11:47:17 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 12:13:43 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/19 20:11:14 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static int	iterate(t_data *data, int x, int y, int iter)
 	double	zi;
 	double temp;
 
-	cr = 0.5;
-	ci = -0.5;
+	cr = (data->mouse_x - WIN_WIDTH / 2.0) / 666.0;
+	ci = (data->mouse_y - WIN_HEIGHT / 2.0) / 666.0;
 	zr = map_real(x, data);
 	zi = map_imaginary(y, data);
 	while (iter < data->max_iter && zr * zr + zi * zi < 16.0)

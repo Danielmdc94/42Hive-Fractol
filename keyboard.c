@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:14:53 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/12 18:28:14 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/19 20:13:32 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,12 @@ void	move_camera(int key, t_data *data)
 		data->i_min = data->i_min - 0.1 / data->zoom;
 		data->i_max = data->i_max - 0.1 / data->zoom;
 	}
-	fractal_to_window(data);
+}
+
+void	max_iter(int key, t_data *data)
+{
+	if (key == 27 && data->max_iter > 0)
+		data->max_iter = data->max_iter - 1;
+	if (key == 24 && data->max_iter < 500)
+		data->max_iter = data->max_iter + 1;
 }

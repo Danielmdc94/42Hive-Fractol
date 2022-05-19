@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 16:51:44 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/19 20:33:15 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,15 @@ typedef struct s_data{
 	double	r_max;
 	double	i_min;
 	double	i_max;
+	int		mouse_x;
+	int		mouse_y;
 	int		width;
 	int		height;
 	int		max_iter;
 	double	zoom;
 	double	distance;
+	int		color;
+
 }				t_data;
 
 /*-------DATA-------*/
@@ -63,6 +67,7 @@ void	hook_control(t_data *data);
 void	img_pixel_put(t_data *data, int x, int y, int color);
 void	data_init(t_data *data);
 void	fractal_to_window(t_data *data);
+int		render_frame(t_data *data);
 
 /*----MANDELBROT----*/
 void	mandelbrot(t_data *data);
@@ -74,9 +79,11 @@ void	julia(t_data *data);
 /*-----CONTROLS-----*/
 int		on_keydown(int key, t_data *data);
 int		on_mousedown(int button, int x, int y, t_data *data);
+int		on_mousemove(int x, int y, t_data *data);
 
 /*-----KEYBOARD-----*/
 void	move_camera(int key, t_data *data);
+void	max_iter(int key, t_data *data);
 
 /*------MOUSE-------*/
 void	zoom(int button, int x, int y,  t_data *data);

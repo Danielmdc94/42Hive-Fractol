@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 12:10:13 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/19 20:33:14 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	hook_control(t_data *data)
 //	mlx_hook(data->win, 3, 0, on_keyup, data);
 	mlx_hook(data->win, 4, 0, on_mousedown, data);
 //	mlx_hook(data->win, 5, 0, on_mouseup, data);
+	mlx_hook(data->win, 6, 0, on_mousemove, data);
 	mlx_hook(data->win, 17, 0, exit_fractol, data);
 //	mlx_loop_hook(data->win, fractal_to_window, data);
 }
@@ -54,14 +55,13 @@ void	data_init(t_data *data)
 	data->i_max = 1.25;
 	data->width = WIN_WIDTH;
 	data->height = WIN_HEIGHT;
-	data->max_iter = 50;
+	data->max_iter = 100;
 	data->zoom = 0.1;
 }
 
 //Chooses the fractal to but put in the window
 void	fractal_to_window(t_data *data)
 {
-	mlx_clear_window(data->mlx, data->win);
 	if (ft_strcmp(data->fractal, "mandelbrot") == 0)
 		mandelbrot(data);
 	else if (ft_strcmp(data->fractal, "julia") == 0)
@@ -73,4 +73,10 @@ void	fractal_to_window(t_data *data)
 			ft_itoa(data->max_iter));
 	mlx_string_put(data->mlx, data->win, 25, 40, WHITE,
 			ft_itoa(data->zoom));
+}
+
+int	render_frame(t_data *data)
+{
+	fractal_to_window(data);
+	return (1);
 }
