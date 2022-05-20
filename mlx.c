@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 20:33:14 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:51:22 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void	hook_control(t_data *data)
 //	mlx_hook(data->win, 3, 0, on_keyup, data);
 	mlx_hook(data->win, 4, 0, on_mousedown, data);
 //	mlx_hook(data->win, 5, 0, on_mouseup, data);
-	mlx_hook(data->win, 6, 0, on_mousemove, data);
+	mlx_hook(data->win, 6, 1L<<9, on_mousemove, data);
 	mlx_hook(data->win, 17, 0, exit_fractol, data);
-//	mlx_loop_hook(data->win, fractal_to_window, data);
+	mlx_loop_hook(data->mlx, render_frame, data);
+	mlx_loop(data->mlx);
 }
 
 //Colors the pixel in the coordinates (X, Y) of a given image
@@ -53,9 +54,11 @@ void	data_init(t_data *data)
 	data->r_max = -0.25;
 	data->i_min = -1.25;
 	data->i_max = 1.25;
+	data->cr = 0.0;
+	data->ci = 0.0;
 	data->width = WIN_WIDTH;
 	data->height = WIN_HEIGHT;
-	data->max_iter = 100;
+	data->max_iter = 50;
 	data->zoom = 0.1;
 }
 
@@ -77,6 +80,8 @@ void	fractal_to_window(t_data *data)
 
 int	render_frame(t_data *data)
 {
+	pthread_t thread_id;
+//	pthread_create(&thread_id, NULL, fractal_to_window, data);
 	fractal_to_window(data);
 	return (1);
 }

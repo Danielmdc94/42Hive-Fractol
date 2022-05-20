@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 20:33:15 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:51:19 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 # define FRACTOL_H
 
 # include "libft/libft.h"
-# include "get_next_line.h"
 # include "mlx.h"
 # include <math.h>
-# include <fcntl.h>
+# include <pthread.h>
 
 /*----RESOLUTION----*/
 # define WIN_WIDTH	1920
@@ -47,6 +46,8 @@ typedef struct s_data{
 	double	r_max;
 	double	i_min;
 	double	i_max;
+	double	cr;
+	double	ci;
 	int		mouse_x;
 	int		mouse_y;
 	int		width;
@@ -58,7 +59,7 @@ typedef struct s_data{
 
 }				t_data;
 
-/*-------DATA-------*/
+/*-------MAIN-------*/
 void	e_print_exit(char *e_string, t_data *data);
 int		exit_fractol(t_data *data);
 
@@ -87,5 +88,6 @@ void	max_iter(int key, t_data *data);
 
 /*------MOUSE-------*/
 void	zoom(int button, int x, int y,  t_data *data);
+void	modify_complex(int button, int x, int y, t_data *data);
 
 #endif

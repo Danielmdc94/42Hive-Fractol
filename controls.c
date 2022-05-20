@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:17:24 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 20:22:52 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:41:08 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,17 @@ int	on_mousedown(int button, int x, int y, t_data *data)
 {
 	if (button == 5 || button == 4)
 		zoom(button, x, y, data);
+//	if (button == 1)
+		//
+//	if (button == 2)
+//		modify_complex(button, x, y, data);
 	ft_putnbr(button);
 	ft_putchar('\n');
-	printf("%d	", y);
-	printf("%d\n", x);
+	return (1);
+}
 
+int	on_mouseup(int button, int x, int y, t_data *data)
+{
 	return (1);
 }
 
@@ -41,7 +47,5 @@ int	on_mousemove(int x, int y, t_data *data)
 {
 	data->mouse_x = x;
 	data->mouse_y = y;
-//	printf("%d	", x);
-//	printf("%d\n", y);
 	return (1);
 }

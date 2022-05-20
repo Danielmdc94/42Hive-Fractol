@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 15:37:29 by dpalacio          #+#    #+#              #
-#    Updated: 2022/05/19 12:10:48 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/05/20 17:41:09 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fractol
 
 CC = clang
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -flto
 
 INCLUDES = -I ./libft/ -I /usr/local/include
 
@@ -30,7 +30,7 @@ all: $(NAME)
 
 $(NAME):
 	@make -C libft/ re
-	$(CC) $(INCLUDES) $(SRC) $(LIB) $(FW) -o $(NAME) -flto
+	$(CC) $(INCLUDES) $(SRC) $(LIB) $(FW) -o $(NAME)
 
 clean:
 	@make -C libft/ clean

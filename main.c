@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:40:52 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/19 20:33:17 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/20 16:18:46 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,4 @@ int	main(int argc, char **argv)
 	data.fractal = ft_strdup(argv[1]);
 	data_init(&data);
 	hook_control(&data);
-	mlx_loop_hook(data.mlx, render_frame, &data);
-	mlx_loop(data.mlx);
 }
