@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/23 14:43:32 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:22:48 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ void	mandelbrot(t_data *data);
 /*------JULIA-------*/
 void	julia(t_data *data);
 
+/*---BURNING SHIP---*/
+void	burning_ship(t_data *data);
+
 /*------UTILS-------*/
 double	ft_abscomplex(double zr, double zi);
 void	get_distance(t_data *data, double zr, double zi);
@@ -95,4 +98,6 @@ void	max_iter(int key, t_data *data);
 void	zoom(int button, int x, int y,  t_data *data);
 void	modify_complex(int button, int x, int y, t_data *data);
 
+/*------COLOR-------*/
+int		iter_color(t_data *data, int iter);
 #endif

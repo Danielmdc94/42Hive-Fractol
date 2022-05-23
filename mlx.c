@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/23 14:30:33 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:26:55 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,11 @@ void	fractal_to_window(t_data *data)
 		mandelbrot(data);
 	else if (ft_strcmp(data->fractal, "julia") == 0)
 		julia(data);
+	else if (ft_strcmp(data->fractal, "burning_ship") == 0)
+		burning_ship(data);
+
 	else
-		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n", data);
+		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n - burning_ship\n", data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 	mlx_string_put(data->mlx, data->win, 25, 15, WHITE,
 			ft_itoa(data->max_iter));

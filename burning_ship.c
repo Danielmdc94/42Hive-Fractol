@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia.c                                            :+:      :+:    :+:   */
+/*   burning_ship.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 11:47:17 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/23 18:33:17 by dpalacio         ###   ########.fr       */
+/*   Created: 2022/05/23 15:43:03 by dpalacio          #+#    #+#             */
+/*   Updated: 2022/05/23 18:12:44 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,22 @@ static int	iterate(t_data *data, int x, int y, int iter)
 	double	zi;
 	double	temp;
 
-	cr = /*map_real(data->mouse_x, data);*/(data->mouse_x - WIN_WIDTH / 2.0) / 666.0;
-	ci = /*map_imaginary(data->mouse_y, data);*/(data->mouse_y - WIN_HEIGHT / 2.0) / 666.0;
-	zr = map_real(x, data);
-	zi = map_imaginary(y, data);
-	while (iter < data->max_iter && zr * zr + zi * zi < 16.0)
+	cr = map_real(x, data);
+	ci = map_imaginary(y, data);
+	zr = cr;
+	zi = ci;
+	while (iter < data->max_iter && zr * zr + zi * zi < 4.0)
 	{
 		temp = zr * zr - zi * zi + cr;
-		zi = 2.0 * zr * zi + ci;
-		zr = temp;
+		zi = fabs(2.0 * zr * zi) + ci;
+		zr = (temp);
 		iter++;
 	}
-	iter_color(data, iter);
 	get_distance(data, zr, zi);
 	return (iter);
 }
 
-void	julia(t_data *data)
+void	burning_ship(t_data *data)
 {
 	int	x;
 	int	y;
@@ -50,11 +49,14 @@ void	julia(t_data *data)
 		while (y < data->height)
 		{
 			iter = iterate(data, x, y, iter);
-			img_pixel_put(data, x, y, data->color);
+			if (iter == data->max_iter)
+				img_pixel_put(data, x, y, BLACK);
+			else
+				img_pixel_put(data, x, y, iter * RED / 50);
 			iter = 0;
 			y++;
-		}
+			}
 		y = 0;
-		x ++;
+		x++;
+		}
 	}
-}
