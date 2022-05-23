@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/20 17:51:22 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:30:33 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	data_init(t_data *data)
 	data->width = WIN_WIDTH;
 	data->height = WIN_HEIGHT;
 	data->max_iter = 50;
-	data->zoom = 0.1;
+	data->zoom = 0.0;
 }
 
 //Chooses the fractal to but put in the window

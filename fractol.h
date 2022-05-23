@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/20 17:51:19 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:43:32 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,16 @@ int		render_frame(t_data *data);
 
 /*----MANDELBROT----*/
 void	mandelbrot(t_data *data);
-double	map_imaginary(int y, t_data *data);
-double	map_real(int x, t_data *data);
 
-/*----MANDELBROT----*/
+/*------JULIA-------*/
 void	julia(t_data *data);
+
+/*------UTILS-------*/
+double	ft_abscomplex(double zr, double zi);
+void	get_distance(t_data *data, double zr, double zi);
+double	map_real(int x, t_data *data);
+double	map_imaginary(int y, t_data *data);
+
 /*-----CONTROLS-----*/
 int		on_keydown(int key, t_data *data);
 int		on_mousedown(int button, int x, int y, t_data *data);
