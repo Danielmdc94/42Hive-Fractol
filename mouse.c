@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:54:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/20 17:41:55 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:49:39 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	zoom(int button, int x, int y, t_data *data)
 		data->r_max = data->r_max * 1.5;
 		data->i_min = data->i_min * 1.5;
 		data->i_max = data->i_max * 1.5;
-		data->zoom--;
+		data->zoom = data->zoom - 1;
 	}
 	if (button == 4)
 	{
@@ -28,7 +28,7 @@ void	zoom(int button, int x, int y, t_data *data)
 		data->r_max = data->r_max / 1.5;
 		data->i_min = data->i_min / 1.5;
 		data->i_max = data->i_max / 1.5;
-		data->zoom++;
+		data->zoom = data->zoom + 1;
 	}
 }
 

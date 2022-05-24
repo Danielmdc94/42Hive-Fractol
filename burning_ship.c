@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:43:03 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/23 18:12:44 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:58:46 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void	burning_ship(t_data *data)
 				img_pixel_put(data, x, y, iter * RED / 50);
 			iter = 0;
 			y++;
-			}
+		}
 		y = 0;
 		x++;
-		}
 	}
+}

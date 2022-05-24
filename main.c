@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:40:52 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/20 16:18:46 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:04:30 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	e_print_exit(char *e_string, t_data *data)
 int	exit_fractol(t_data *data)
 {
 	exit(0);
+	free(data);
 	return (1);
 }
 
