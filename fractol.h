@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 16:02:45 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 16:59:03 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,9 @@ int		render_frame(t_data *data);
 
 /*----FRACTALS----*/
 //int	mandelbrot(t_data *data, int x, int y, int iter);
-
+int		choose_fractal(t_data *data, int x, int y, int iter);
 /*------JULIA-------*/
-void	julia(t_data *data);
+//void	julia(t_data *data);
 
 /*---BURNING SHIP---*/
 void	burning_ship(t_data *data);

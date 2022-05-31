@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 15:36:45 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 16:58:52 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	hook_control(t_data *data)
 	mlx_hook(data->win, 6, 0, on_mousemove, data);
 	mlx_hook(data->win, 17, 0, exit_fractol, data);
 	mlx_loop_hook(data->mlx, render_frame, data);
-//	render_frame(data);
 	mlx_loop(data->mlx);
 }
 
@@ -72,7 +71,7 @@ void	fractal_to_window(t_data *data)
 		screen_threads(data);
 //		mandelbrot(data);
 	else if (ft_strcmp(data->fractal, "julia") == 0)
-		julia(data);
+		screen_threads(data);
 	else if (ft_strcmp(data->fractal, "burning_ship") == 0)
 		burning_ship(data);
 	else
