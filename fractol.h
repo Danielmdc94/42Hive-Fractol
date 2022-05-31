@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/30 14:29:12 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 14:42:33 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <pthread.h>
 
 /*----RESOLUTION----*/
-# define WIN_WIDTH	1920
-# define WIN_HEIGHT	1080
+# define WIN_WIDTH	1000
+# define WIN_HEIGHT	1000
 
 /*------COLORS------*/
 # define WHITE		0xFFFFFF
@@ -56,7 +56,7 @@ typedef struct s_data{
 	double	zoom;
 	double	distance;
 	int		color;
-
+	int		thread;
 }				t_data;
 
 /*-------MAIN-------*/

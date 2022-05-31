@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 11:27:06 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 14:28:10 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,15 @@ void	data_init(t_data *data)
 	data->img = mlx_new_image(data->mlx, WIN_WIDTH, WIN_HEIGHT);
 	data->img_addr = mlx_get_data_addr(data->img, &data->px_bits,
 			&data->line_bytes, &data->endian);
-	data->r_min = -2.75;
-	data->r_max = -0.25;
-	data->i_min = -1.25;
-	data->i_max = 1.25;
+	data->r_min = -2;
+	data->r_max = 0.47;
+	data->i_min = -1.12;
+	data->i_max = 1.12;
 	data->cr = 0.0;
 	data->ci = 0.0;
 	data->width = WIN_WIDTH;
 	data->height = WIN_HEIGHT;
-	data->max_iter = 10;
+	data->max_iter = 50;
 	data->zoom = 0.0;
 }
 
