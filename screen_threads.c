@@ -6,29 +6,30 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 19:13:28 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:59:29 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void get_pixel(t_thread *structs);
+static void	get_pixel(t_thread *structs);
 
 void	screen_threads(t_data *data)
 {
 	pthread_t	threads[10];
 	t_thread	structs[10];
-	int	id;
+	int			id;
 
 	id = 0;
-	while(id < 10)
+	while (id < 10)
 	{
 		structs[id].id = id;
 		structs[id].data = data;
-		pthread_create(&threads[id], NULL, (void *)get_pixel, (void *)&structs[id]);
+		pthread_create(&threads[id], NULL, (void *)get_pixel,
+			(void *)&structs[id]);
 		id++;
 	}
-	while(id >= 0)
+	while (id >= 0)
 	{
 		pthread_join(threads[id], NULL);
 		id--;

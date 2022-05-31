@@ -6,11 +6,12 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:00:08 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 19:48:43 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:58:11 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
 static void	init_mandelbrot(t_data *data);
 static void	init_julia(t_data *data);
 static void	init_burning_ship(t_data *data);

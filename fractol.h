@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 19:48:13 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:59:54 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ typedef struct s_data{
 
 typedef struct s_thread
 {
-	
 	t_data	*data;
 	int		id;
 }				t_thread;
