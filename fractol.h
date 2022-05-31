@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 14:42:33 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 16:02:45 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,16 @@ typedef struct s_data{
 	double	zoom;
 	double	distance;
 	int		color;
-	int		thread;
 }				t_data;
+
+/*------THREAD------*/
+
+typedef struct s_thread
+{
+	
+	t_data	*data;
+	int		id;
+}				t_thread;
 
 /*-------MAIN-------*/
 void	e_print_exit(char *e_string, t_data *data);
@@ -70,8 +78,8 @@ void	data_init(t_data *data);
 void	fractal_to_window(t_data *data);
 int		render_frame(t_data *data);
 
-/*----MANDELBROT----*/
-void	mandelbrot(t_data *data);
+/*----FRACTALS----*/
+//int	mandelbrot(t_data *data, int x, int y, int iter);
 
 /*------JULIA-------*/
 void	julia(t_data *data);

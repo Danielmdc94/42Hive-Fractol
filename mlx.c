@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 14:28:10 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:36:45 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ void	fractal_to_window(t_data *data)
 	char	*temp;
 
 	if (ft_strcmp(data->fractal, "mandelbrot") == 0)
-		mandelbrot(data);
+		screen_threads(data);
+//		mandelbrot(data);
 	else if (ft_strcmp(data->fractal, "julia") == 0)
 		julia(data);
 	else if (ft_strcmp(data->fractal, "burning_ship") == 0)
