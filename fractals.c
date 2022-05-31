@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:46:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 17:50:13 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:03:37 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ static int	burning_ship(t_data *data, int x, int y, int iter);
 int	choose_fractal(t_data *data, int x, int y, int iter)
 {
 	if (ft_strcmp(data->fractal, "mandelbrot") == 0)
-		return(mandelbrot(data, x, y, iter));
+		return (mandelbrot(data, x, y, iter));
 	else if (ft_strcmp(data->fractal, "julia") == 0)
-		return(julia(data, x, y, iter));
+		return (julia(data, x, y, iter));
 	else if (ft_strcmp(data->fractal, "burning_ship") == 0)
-		return(burning_ship(data, x, y, iter));
+		return (burning_ship(data, x, y, iter));
 	return (0);
 }
 
@@ -59,8 +59,8 @@ static int	julia(t_data *data, int x, int y, int iter)
 	double	zi;
 	double	temp;
 
-	cr = /*map_real(data->mouse_x, data);*/(data->mouse_x - WIN_WIDTH / 2.0) / 666.0;
-	ci = /*map_imaginary(data->mouse_y, data);*/(data->mouse_y - WIN_HEIGHT / 2.0) / 666.0;
+	cr = /*map_real(data->mouse_x, data);*/ (data->mouse_x - WIN_WIDTH / 2.0) / 666.0;
+	ci = /*map_imaginary(data->mouse_y, data);*/ (data->mouse_y - WIN_HEIGHT / 2.0) / 666.0;
 	zr = map_real(x, data);
 	zi = map_imaginary(y, data);
 	while (iter < data->max_iter && zr * zr + zi * zi < 16.0)

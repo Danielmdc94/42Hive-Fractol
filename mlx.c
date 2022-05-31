@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 17:53:45 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:40:08 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 void	hook_control(t_data *data)
 {
 	mlx_hook(data->win, 2, 0, on_keydown, data);
-//	mlx_hook(data->win, 3, 0, on_keyup, data);
 	mlx_hook(data->win, 4, 0, on_mousedown, data);
-//	mlx_hook(data->win, 5, 0, on_mouseup, data);
 	mlx_hook(data->win, 6, 0, on_mousemove, data);
 	mlx_hook(data->win, 17, 0, exit_fractol, data);
 	mlx_loop_hook(data->mlx, render_frame, data);
@@ -51,39 +49,14 @@ void	data_init(t_data *data)
 	data->img_addr = mlx_get_data_addr(data->img, &data->px_bits,
 			&data->line_bytes, &data->endian);
 	data->r_min = -2;
-	data->r_max = 0.47;
-	data->i_min = -1.12;
-	data->i_max = 1.12;
+	data->r_max = 0.5;
+	data->i_min = -1.25;
+	data->i_max = 1.25;
 	data->cr = 0.0;
 	data->ci = 0.0;
 	data->width = WIN_WIDTH;
 	data->height = WIN_HEIGHT;
 	data->max_iter = 50;
 	data->zoom = 0.0;
-}
-
-//Chooses the fractal to but put in the window
-void	fractal_to_window(t_data *data)
-{
-	char	*temp;
-
-	if ((ft_strcmp(data->fractal, "mandelbrot") != 0 &&
-			ft_strcmp(data->fractal, "julia") != 0) && 
-			ft_strcmp(data->fractal, "burning_ship") != 0)
-		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n - burning_ship\n",
-			data);
-	screen_threads(data);
-	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
-	temp = ft_itoa(data->max_iter);
-	mlx_string_put(data->mlx, data->win, 25, 15, WHITE, temp);
-	free(temp);
-	temp = ft_itoa(data->zoom);
-	mlx_string_put(data->mlx, data->win, 25, 40, WHITE, temp);
-	free(temp);
-}
-
-int	render_frame(t_data *data)
-{
-	fractal_to_window(data);
-	return (1);
+	fractals_init(data);
 }

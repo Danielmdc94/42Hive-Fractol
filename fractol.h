@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 17:53:43 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:48:13 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,17 @@ int		exit_fractol(t_data *data);
 void	hook_control(t_data *data);
 void	img_pixel_put(t_data *data, int x, int y, int color);
 void	data_init(t_data *data);
-void	fractal_to_window(t_data *data);
-int		render_frame(t_data *data);
 
 /*--SCREEN THREADS--*/
 void	screen_threads(t_data *data);
+void	fractal_to_window(t_data *data);
+int		render_frame(t_data *data);
 
 /*-----FRACTALS-----*/
 int		choose_fractal(t_data *data, int x, int y, int iter);
+
+/*--FRACTALS INIT---*/
+void	fractals_init(t_data *data);
 
 /*------UTILS-------*/
 double	ft_abscomplex(double zr, double zi);
@@ -105,4 +108,5 @@ void	modify_complex(int button, int x, int y, t_data *data);
 
 /*------COLOR-------*/
 int		iter_color(t_data *data, int iter);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:17:24 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/23 14:11:28 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:43:48 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	on_keydown(int key, t_data *data)
 		move_camera(key, data);
 	if (key == 24 || key == 27)
 		max_iter(key, data);
+	if (key == 49)
+		fractals_init(data);
 	ft_putnbr(key);
 	ft_putchar('\n');
 	return (1);

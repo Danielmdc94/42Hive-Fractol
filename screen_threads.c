@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 17:51:35 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:13:28 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,24 @@ static void	get_pixel(t_thread *structs)
 		y = 0;
 		x++;
 	}
+}
+
+void	fractal_to_window(t_data *data)
+{
+	char	*temp;
+
+	screen_threads(data);
+	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
+	temp = ft_itoa(data->max_iter);
+	mlx_string_put(data->mlx, data->win, 25, 15, WHITE, temp);
+	free(temp);
+	temp = ft_itoa(data->zoom);
+	mlx_string_put(data->mlx, data->win, 25, 40, WHITE, temp);
+	free(temp);
+}
+
+int	render_frame(t_data *data)
+{
+	fractal_to_window(data);
+	return (1);
 }
