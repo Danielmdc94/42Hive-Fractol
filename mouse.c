@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:54:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 20:10:24 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:56:38 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ void	zoom(int button, int x, int y, t_data *data)
 {
 	if (button == 5)
 	{
-		data->r_min = data->r_min * 1.5;
-		data->r_max = data->r_max * 1.5;
-		data->i_min = data->i_min * 1.5;
-		data->i_max = data->i_max * 1.5;
-		data->zoom = data->zoom - 1;
+		data->r_min = (data->r_min - map_real(x, data)) * 1.25;
+		data->r_max = (data->r_max - map_real(x, data)) * 1.25;
+		data->i_min = (data->i_min - map_imaginary(y, data)) * 1.25;
+		data->i_max = (data->i_max - map_imaginary(y, data)) * 1.25;
+		data->zoom = data->zoom * ZOOM;
 	}
 	if (button == 4)
 	{
-		data->r_min = data->r_min / 1.5;
-		data->r_max = data->r_max / 1.5;
-		data->i_min = data->i_min / 1.5;
-		data->i_max = data->i_max / 1.5;
-		data->zoom = data->zoom + 1;
+		data->r_min = (data->r_min - map_real(x, data)) / 1.25;
+		data->r_max = (data->r_max - map_real(x, data)) / 1.25;
+		data->i_min = (data->i_min - map_imaginary(y, data)) / 1.25;
+		data->i_max = (data->i_max - map_imaginary(y, data)) / 1.25;
+		data->zoom = data->zoom * (1 / ZOOM);
 	}
 }
 

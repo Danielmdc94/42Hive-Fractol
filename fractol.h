@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 20:12:09 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:56:48 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 /*----RESOLUTION----*/
 # define WIN_WIDTH	1000
 # define WIN_HEIGHT	1000
+# define ZOOM		1.1f
 
 /*------COLORS------*/
 # define WHITE		0xFFFFFF

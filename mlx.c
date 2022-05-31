@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 20:05:02 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:55:14 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void	data_init(t_data *data)
 	data->ci = 0.0;
 	data->mouse_lock = 0;
 	data->max_iter = 50;
-	data->zoom = 0.0;
+	data->zoom = 1.0;
 	fractals_init(data);
 }
