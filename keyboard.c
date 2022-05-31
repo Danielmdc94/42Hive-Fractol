@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:14:53 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 19:44:05 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:02:34 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	move_camera(int key, t_data *data)
 {
+	//NEED TO CHANGE -> Divided by 0 when zoom = 0
 	if (key == 123)
 	{
 		data->r_min = data->r_min - 0.1 / data->zoom;

@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 19:59:54 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:12:09 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ typedef struct s_data{
 	double	ci;
 	int		mouse_x;
 	int		mouse_y;
-	int		width;
-	int		height;
+	int		mouse_lock;
 	int		max_iter;
 	double	zoom;
 	double	distance;
@@ -104,6 +103,7 @@ void	max_iter(int key, t_data *data);
 /*------MOUSE-------*/
 void	zoom(int button, int x, int y, t_data *data);
 void	modify_complex(int button, int x, int y, t_data *data);
+void	mouse_lock(int button, int x, int y, t_data *data);
 
 /*------COLOR-------*/
 int		iter_color(t_data *data, int iter);

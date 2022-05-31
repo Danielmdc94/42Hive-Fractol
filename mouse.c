@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:54:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/24 11:49:39 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:10:24 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ void	zoom(int button, int x, int y, t_data *data)
 	}
 }
 
-void	modify_complex(int button, int x, int y, t_data *data)
+void	mouse_lock(int button, int x, int y, t_data *data)
 {
-	data->cr = (data->mouse_x - WIN_WIDTH / 2.0) / 666.0;
-	data->ci = (data->mouse_y - WIN_HEIGHT / 2.0) / 666.0;
+	if (data->mouse_lock == 0)
+		data->mouse_lock = 1;
+	else if (data->mouse_lock == 1)
+		data->mouse_lock = 0;
+
 }

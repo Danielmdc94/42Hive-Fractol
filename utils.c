@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:34:32 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/23 17:41:53 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:06:11 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ double	map_real(int x, t_data *data)
 	double	range;
 
 	range = data->r_max - data->r_min;
-	return ((double)x * (range / data->height) + data->r_min);
+	return ((double)x * (range / WIN_WIDTH) + data->r_min);
 }
 
 double	map_imaginary(int y, t_data *data)
@@ -44,5 +44,5 @@ double	map_imaginary(int y, t_data *data)
 	double	range;
 
 	range = data->i_max - data->i_min;
-	return ((double)y * (range / data->height) + data->i_min);
+	return ((double)y * (range / WIN_HEIGHT) + data->i_min);
 }
