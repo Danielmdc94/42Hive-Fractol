@@ -6,36 +6,13 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 15:55:36 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 17:51:35 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
 static void get_pixel(t_thread *structs);
-
-static int	iterate(t_data *data, int x, int y, int iter)
-{
-	double	cr;
-	double	ci;
-	double	zr;
-	double	zi;
-	double	temp;
-
-	cr = map_real(x, data);
-	ci = map_imaginary(y, data);
-	zr = 0;
-	zi = 0;
-	while (iter < data->max_iter && ft_abs(zr + zi) < 16.0)
-	{
-		temp = zr * zr - zi * zi + cr;
-		zi = 2.0 * zr * zi + ci;
-		zr = temp;
-		iter++;
-	}
-	iter_color(data, iter);
-	get_distance(data, zr, zi);
-	return (iter);
-}
 
 void	screen_threads(t_data *data)
 {
@@ -48,7 +25,7 @@ void	screen_threads(t_data *data)
 	{
 		structs[id].id = id;
 		structs[id].data = data;
-		pthread_create(&threads[id], NULL, get_pixel, (void *)&structs[id]);
+		pthread_create(&threads[id], NULL, (void *)get_pixel, (void *)&structs[id]);
 		id++;
 	}
 	while(id >= 0)

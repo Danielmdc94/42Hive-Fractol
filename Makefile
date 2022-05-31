@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 15:37:29 by dpalacio          #+#    #+#              #
-#    Updated: 2022/05/31 15:58:15 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/05/31 17:49:46 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIB = -L ./libft -lft -L /usr/local/lib/ -lmlx
 
 FW = -framework OpenGL -framework AppKit
 
-SRC = main.c mlx.c julia.c burning_ship.c controls.c keyboard.c mouse.c utils.c color.c screen_threads.c fractals.c
+SRC = main.c mlx.c controls.c keyboard.c mouse.c utils.c color.c screen_threads.c fractals.c
 
 OBJ = $(SRC:.c=.o)
 

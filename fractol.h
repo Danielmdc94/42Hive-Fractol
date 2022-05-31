@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 16:59:03 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 17:53:43 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,11 @@ void	data_init(t_data *data);
 void	fractal_to_window(t_data *data);
 int		render_frame(t_data *data);
 
-/*----FRACTALS----*/
-//int	mandelbrot(t_data *data, int x, int y, int iter);
-int		choose_fractal(t_data *data, int x, int y, int iter);
-/*------JULIA-------*/
-//void	julia(t_data *data);
+/*--SCREEN THREADS--*/
+void	screen_threads(t_data *data);
 
-/*---BURNING SHIP---*/
-void	burning_ship(t_data *data);
+/*-----FRACTALS-----*/
+int		choose_fractal(t_data *data, int x, int y, int iter);
 
 /*------UTILS-------*/
 double	ft_abscomplex(double zr, double zi);
