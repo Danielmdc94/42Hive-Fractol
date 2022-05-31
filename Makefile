@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 15:37:29 by dpalacio          #+#    #+#              #
-#    Updated: 2022/05/23 18:23:16 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/05/30 12:21:22 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fractol
 
 CC = clang
 
-CFLAGS = -Wall -Wextra -Werror -flto
+CFLAGS = -Wall -Wextra -Werror -flto -lpthread
 
 INCLUDES = -I ./libft/ -I /usr/local/include
 

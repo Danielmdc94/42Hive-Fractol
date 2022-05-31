@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/24 12:03:40 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:27:06 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	hook_control(t_data *data)
 	mlx_hook(data->win, 6, 0, on_mousemove, data);
 	mlx_hook(data->win, 17, 0, exit_fractol, data);
 	mlx_loop_hook(data->mlx, render_frame, data);
+//	render_frame(data);
 	mlx_loop(data->mlx);
 }
 
@@ -58,7 +59,7 @@ void	data_init(t_data *data)
 	data->ci = 0.0;
 	data->width = WIN_WIDTH;
 	data->height = WIN_HEIGHT;
-	data->max_iter = 50;
+	data->max_iter = 10;
 	data->zoom = 0.0;
 }
 
