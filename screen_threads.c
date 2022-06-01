@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 19:59:29 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:47:36 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	fractal_to_window(t_data *data)
 {
 	char	*temp;
 
+	mlx_clear_window(data->mlx, data->win);
 	screen_threads(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 	temp = ft_itoa(data->max_iter);
