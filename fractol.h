@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/05/31 20:56:48 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/01 10:40:55 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	move_camera(int key, t_data *data);
 void	max_iter(int key, t_data *data);
 
 /*------MOUSE-------*/
-void	zoom(int button, int x, int y, t_data *data);
+void	zoom(int button, int x, int y, double z, t_data *data);
 void	modify_complex(int button, int x, int y, t_data *data);
 void	mouse_lock(int button, int x, int y, t_data *data);
 
