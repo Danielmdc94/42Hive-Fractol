@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:00:08 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/01 10:06:02 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/02 12:30:14 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	init_mandelbrot(t_data *data)
 	data->cr = 0.0;
 	data->ci = 0.0;
 	data->max_iter = 50;
-	data->zoom = 1.0;
+	data->zoom = 1.1;
 }
 
 static void	init_julia(t_data *data)
@@ -50,7 +50,7 @@ static void	init_julia(t_data *data)
 	data->cr = 0.0;
 	data->ci = 0.0;
 	data->max_iter = 50;
-	data->zoom = 1.0;
+	data->zoom = 1.1;
 }
 
 static void	init_burning_ship(t_data *data)
@@ -62,5 +62,5 @@ static void	init_burning_ship(t_data *data)
 	data->cr = 0.0;
 	data->ci = 0.0;
 	data->max_iter = 50;
-	data->zoom = 1.0;
+	data->zoom = 1.1;
 }

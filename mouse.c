@@ -6,24 +6,35 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:54:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/01 15:45:45 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/02 13:50:42 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	zoom(int button, int x, int y, double z, t_data *data)
+void	zoom(int button, int x, int y, t_data *data)
 {
 	double	x_map;
 	double	y_map;
 
 	x_map = map_real(x, data);
 	y_map = map_imaginary(y, data);
-	data->r_min = data->r_min + fabs(data->r_min - x_map) * 0.1;
-	data->r_max = data->r_max - fabs(data->r_max - x_map) * 0.1;
-	data->i_min = data->i_min + fabs(data->i_min - y_map) * 0.1;
-	data->i_max = data->i_max - fabs(data->i_max - y_map) * 0.1;
-	data->zoom *= z;
+	if (button == 4)
+	{
+		data->r_min += fabsl(data->r_min - x_map) * ZOOM;
+		data->r_max -= fabsl(data->r_max - x_map) * ZOOM;
+		data->i_min += fabsl(data->i_min - y_map) * ZOOM;
+		data->i_max -= fabsl(data->i_max - y_map) * ZOOM;
+		data->zoom++;
+	}
+	if (button == 5)
+	{
+		data->r_min -= fabsl(data->r_min - x_map) * ZOOM;
+		data->r_max += fabsl(data->r_max - x_map) * ZOOM;
+		data->i_min -= fabsl(data->i_min - y_map) * ZOOM;
+		data->i_max += fabsl(data->i_max - y_map) * ZOOM;
+		data->zoom--;
+	}
 }
 
 void	mouse_lock(int button, int x, int y, t_data *data)

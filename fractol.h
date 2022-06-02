@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/01 10:40:55 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/02 13:50:20 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 /*----RESOLUTION----*/
 # define WIN_WIDTH	1000
 # define WIN_HEIGHT	1000
-# define ZOOM		1.1f
+# define ZOOM		0.1f
 
 /*------COLORS------*/
 # define WHITE		0xFFFFFF
@@ -43,18 +43,18 @@ typedef struct s_data{
 	int		endian;
 	char	*img_addr;
 	char	*fractal;
-	double	r_min;
-	double	r_max;
-	double	i_min;
-	double	i_max;
-	double	cr;
-	double	ci;
+	long double	r_min;
+	long double	r_max;
+	long double	i_min;
+	long double	i_max;
+	long double	cr;
+	long double	ci;
 	int		mouse_x;
 	int		mouse_y;
 	int		mouse_lock;
 	int		max_iter;
-	double	zoom;
-	double	distance;
+	long double	zoom;
+	long double	distance;
 	int		color;
 }				t_data;
 
@@ -102,7 +102,7 @@ void	move_camera(int key, t_data *data);
 void	max_iter(int key, t_data *data);
 
 /*------MOUSE-------*/
-void	zoom(int button, int x, int y, double z, t_data *data);
+void	zoom(int button, int x, int y, t_data *data);
 void	modify_complex(int button, int x, int y, t_data *data);
 void	mouse_lock(int button, int x, int y, t_data *data);
 
