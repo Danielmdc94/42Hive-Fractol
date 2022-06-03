@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/02 13:50:20 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/03 16:43:24 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,27 @@
 
 /*-------DATA-------*/
 typedef struct s_data{
-	void	*mlx;
-	void	*win;
-	void	*img;
-	int		px_bits;
-	int		line_bytes;
-	int		endian;
-	char	*img_addr;
-	char	*fractal;
+	void		*mlx;
+	void		*win;
+	void		*img;
+	int			px_bits;
+	int			line_bytes;
+	int			endian;
+	char		*img_addr;
+	char		*fractal;
 	long double	r_min;
 	long double	r_max;
 	long double	i_min;
 	long double	i_max;
 	long double	cr;
 	long double	ci;
-	int		mouse_x;
-	int		mouse_y;
-	int		mouse_lock;
-	int		max_iter;
+	int			mouse_x;
+	int			mouse_y;
+	int			mouse_lock;
+	int			max_iter;
 	long double	zoom;
 	long double	distance;
-	int		color;
+	int			color_mode;
 }				t_data;
 
 /*------THREAD------*/
@@ -108,5 +108,6 @@ void	mouse_lock(int button, int x, int y, t_data *data);
 
 /*------COLOR-------*/
 int		iter_color(t_data *data, int iter);
+int		distance_color(t_data *data);
 
 #endif

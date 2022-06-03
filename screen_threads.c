@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/02 17:59:41 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/03 16:45:02 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	get_pixel(t_thread *structs)
 		while (y < WIN_HEIGHT)
 		{
 			iter = choose_fractal(structs->data, x, y, iter);
-			img_pixel_put(structs->data, x, y, iter_color(structs->data, iter));
+			img_pixel_put(structs->data, x, y, distance_color(structs->data));
 			iter = 0;
 			y++;
 		}
