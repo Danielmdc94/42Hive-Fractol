@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 16:45:02 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:51:39 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,24 @@ void	screen_threads(t_data *data)
 
 static void	get_pixel(t_thread *structs)
 {
-	int	x;
-	int	y;
-	int	iter;
+	t_pixel	pixel;
 
-	x = 100 * structs->id;
-	y = 0;
-	iter = 0;
-	while (x < 100 * (structs->id + 1))
+	pixel.x = 100 * structs->id;
+	pixel.y = 0;
+	pixel.iter = 0;
+	pixel.distance = 0;
+	while (pixel.x < 100 * (structs->id + 1))
 	{
-		while (y < WIN_HEIGHT)
+		while (pixel.y < WIN_HEIGHT)
 		{
-			iter = choose_fractal(structs->data, x, y, iter);
-			img_pixel_put(structs->data, x, y, distance_color(structs->data));
-			iter = 0;
-			y++;
+			choose_fractal(structs->data, &pixel);
+			img_pixel_put(structs->data, pixel.x, pixel.y,
+				color(structs->data, &pixel));
+			pixel.iter = 0;
+			pixel.y++;
 		}
-		y = 0;
-		x++;
+		pixel.y = 0;
+		pixel.x++;
 	}
 }
 

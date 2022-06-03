@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:00:08 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 16:34:21 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/03 20:36:17 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static void	init_burning_ship(t_data *data);
 
 void	fractals_init(t_data *data)
 {
-	if (ft_strcmp(data->fractal, "mandelbrot") == 0)
+	if (data->fractal == 0)
 		init_mandelbrot(data);
-	else if (ft_strcmp(data->fractal, "julia") == 0)
+	else if (data->fractal == 1)
 		init_julia(data);
-	else if (ft_strcmp(data->fractal, "burning_ship") == 0)
+	else if (data->fractal == 2)
 		init_burning_ship(data);
 	else
 		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n - burning_ship\n",

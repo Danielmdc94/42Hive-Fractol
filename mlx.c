@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 16:41:15 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:36:39 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ void	data_init(t_data *data)
 	data->img_addr = mlx_get_data_addr(data->img, &data->px_bits,
 			&data->line_bytes, &data->endian);
 	data->mouse_lock = 0;
-	data->color_mode = 0;
+	data->color_mode = 1;
 	fractals_init(data);
 }

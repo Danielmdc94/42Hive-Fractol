@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 16:43:24 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/03 20:44:32 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_data{
 	int			line_bytes;
 	int			endian;
 	char		*img_addr;
-	char		*fractal;
+	int			fractal;
 	long double	r_min;
 	long double	r_max;
 	long double	i_min;
@@ -66,48 +66,58 @@ typedef struct s_thread
 	int		id;
 }				t_thread;
 
+/*------PIXEL-------*/
+typedef struct s_pixel
+{
+	int			x;
+	int			y;
+	int			iter;
+	long double	distance;
+}				t_pixel;
+
 /*-------MAIN-------*/
-void	e_print_exit(char *e_string, t_data *data);
-int		exit_fractol(t_data *data);
+void		e_print_exit(char *e_string, t_data *data);
+int			exit_fractol(t_data *data);
 
 /*-------MLX--------*/
-void	hook_control(t_data *data);
-void	img_pixel_put(t_data *data, int x, int y, int color);
-void	data_init(t_data *data);
+void		hook_control(t_data *data);
+void		img_pixel_put(t_data *data, int x, int y, int color);
+void		data_init(t_data *data);
 
 /*--SCREEN THREADS--*/
-void	screen_threads(t_data *data);
-void	fractal_to_window(t_data *data);
-int		render_frame(t_data *data);
+void		screen_threads(t_data *data);
+void		fractal_to_window(t_data *data);
+int			render_frame(t_data *data);
 
 /*-----FRACTALS-----*/
-int		choose_fractal(t_data *data, int x, int y, int iter);
+int			choose_fractal(t_data *data, t_pixel *pixel);
 
 /*--FRACTALS INIT---*/
-void	fractals_init(t_data *data);
+void		fractals_init(t_data *data);
 
 /*------UTILS-------*/
-double	ft_abscomplex(double zr, double zi);
-void	get_distance(t_data *data, double zr, double zi);
-double	map_real(int x, t_data *data);
-double	map_imaginary(int y, t_data *data);
+long double	ft_abscomplex(long double zr, long double zi);
+long double	get_distance(t_data *data, long double zr, long double zi);
+long double	map_real(int x, t_data *data);
+long double	map_imaginary(int y, t_data *data);
 
 /*-----CONTROLS-----*/
-int		on_keydown(int key, t_data *data);
-int		on_mousedown(int button, int x, int y, t_data *data);
-int		on_mousemove(int x, int y, t_data *data);
+int			on_keydown(int key, t_data *data);
+int			on_mousedown(int button, int x, int y, t_data *data);
+int			on_mousemove(int x, int y, t_data *data);
 
 /*-----KEYBOARD-----*/
-void	move_camera(int key, t_data *data);
-void	max_iter(int key, t_data *data);
-
+void		move_camera(int key, t_data *data);
+void		max_iter(int key, t_data *data);
+void		change_colors(int key, t_data *data);
 /*------MOUSE-------*/
-void	zoom(int button, int x, int y, t_data *data);
-void	modify_complex(int button, int x, int y, t_data *data);
-void	mouse_lock(int button, int x, int y, t_data *data);
+void		zoom(int button, int x, int y, t_data *data);
+void		modify_complex(int button, int x, int y, t_data *data);
+void		mouse_lock(int button, int x, int y, t_data *data);
 
 /*------COLOR-------*/
-int		iter_color(t_data *data, int iter);
-int		distance_color(t_data *data);
+int			color(t_data *data, t_pixel *pixel);
+int			iter_color(t_data *data, int iter);
+int			distance_color(t_data *data, long double distance);
 
 #endif
