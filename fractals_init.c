@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:00:08 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 20:36:17 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/03 21:07:46 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static void	init_julia(t_data *data)
 	data->ci = 0.0;
 	data->max_iter = 50;
 	data->zoom = 1.0;
+	data->mouse_lock = 0;
 }
 
 static void	init_burning_ship(t_data *data)

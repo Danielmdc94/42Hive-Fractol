@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 20:44:32 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/03 20:57:25 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ int			on_mousemove(int x, int y, t_data *data);
 void		move_camera(int key, t_data *data);
 void		max_iter(int key, t_data *data);
 void		change_colors(int key, t_data *data);
+void		change_fractal(int key, t_data *data);
 /*------MOUSE-------*/
 void		zoom(int button, int x, int y, t_data *data);
 void		modify_complex(int button, int x, int y, t_data *data);
