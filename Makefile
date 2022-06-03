@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 15:37:29 by dpalacio          #+#    #+#              #
-#    Updated: 2022/06/03 21:33:28 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/06/03 21:44:49 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INCLUDES = -I ./libft/ -I /usr/local/include
 
 LIBFT = -L ./libft -lft #-L /usr/local/lib/ -lmlx
 
-MINXLIB = -lmlx -framework AppKit -framework OpenGL
+MINXLIB = -L ./minilibx -lmlx -framework AppKit -framework OpenGL
 
 
 #FW = -framework OpenGL -framework AppKit
