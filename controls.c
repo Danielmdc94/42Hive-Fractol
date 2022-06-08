@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:17:24 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 11:19:59 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:00:04 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	on_keydown(int key, t_data *data)
 		fractals_init(data);
 	if (key == 262)
 		change_colors(key, data);
-	if (key == 82 || key == 83 || key == 84)
+	if (key == 82 || key == 83 || key == 84 || key == 85)
 		change_fractal(key, data);
 	if (key == 33 || key == 30)
 		change_escape(key, data);

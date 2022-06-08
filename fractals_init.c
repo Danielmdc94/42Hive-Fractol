@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:00:08 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 11:16:45 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:14:37 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	fractals_init(t_data *data)
 {
 	if (data->fractal == 0)
 		init_mandelbrot(data);
-	else if (data->fractal == 1)
+	else if (data->fractal == 1 || data->fractal == 3)
 		init_julia(data);
 	else if (data->fractal == 2)
 		init_burning_ship(data);
 	else
-		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n - burning_ship\n",
-			data);
+		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n - burning_ship\n \
+- burning_julia", data);
 	data->start.r_min = data->r_min;
 	data->start.r_max = data->r_max;
 	data->start.i_min = data->i_min;

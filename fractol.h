@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 11:53:13 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:52:29 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ void		data_init(t_data *data);
 
 /*--SCREEN THREADS--*/
 void		screen_threads(t_data *data);
-void		fractal_to_window(t_data *data);
 int			render_frame(t_data *data);
 
 /*-----FRACTALS-----*/
