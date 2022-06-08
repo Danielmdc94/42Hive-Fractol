@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:14:53 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 21:13:00 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:19:17 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,12 @@ void	change_fractal(int key, t_data *data)
 	if (key == 84)
 		data->fractal = 2;
 	fractals_init(data);
+}
+
+void	change_escape(int key, t_data *data)
+{
+	if (key == 33)
+		data->escape--;
+	if (key == 30)
+		data->escape++;
 }

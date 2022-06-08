@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:03:10 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 19:32:32 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:54:01 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	color(t_data *data, t_pixel *pixel)
 	if (data->color_mode == 0)
 		return (iter_color(data, pixel->iter));
 	if (data->color_mode == 1)
-		return (iter_color(data, pixel->distance));
+		return (distance_color(data, pixel->distance));
 	else
 		return (0);
 }

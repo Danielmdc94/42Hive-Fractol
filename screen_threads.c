@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 19:51:39 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:52:36 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	fractal_to_window(t_data *data)
 	mlx_string_put(data->mlx, data->win, 25, 15, WHITE, temp);
 	free(temp);
 	temp = ft_itoa(data->zoom);
+	mlx_string_put(data->mlx, data->win, 25, 40, WHITE, temp);
+	temp = ft_itoa(data->escape);
 	mlx_string_put(data->mlx, data->win, 25, 40, WHITE, temp);
 	free(temp);
 }

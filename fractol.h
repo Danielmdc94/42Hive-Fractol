@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 21:42:21 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:53:13 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@
 # define CYAN		0x00FFFF
 # define MAGENTA	0xFF00FF
 
+/*-STARTING VALUES--*/
+typedef struct s_start{
+	long double	r_min;
+	long double	r_max;
+	long double	i_min;
+	long double	i_max;
+}				t_start;
+
 /*-------DATA-------*/
 typedef struct s_data{
 	void		*mlx;
@@ -47,8 +55,10 @@ typedef struct s_data{
 	long double	r_max;
 	long double	i_min;
 	long double	i_max;
+	t_start		start;
 	long double	cr;
 	long double	ci;
+	long double	escape;
 	int			mouse_x;
 	int			mouse_y;
 	int			mouse_lock;
@@ -59,7 +69,6 @@ typedef struct s_data{
 }				t_data;
 
 /*------THREAD------*/
-
 typedef struct s_thread
 {
 	t_data	*data;
@@ -111,6 +120,7 @@ void		move_camera(int key, t_data *data);
 void		max_iter(int key, t_data *data);
 void		change_colors(int key, t_data *data);
 void		change_fractal(int key, t_data *data);
+void		change_escape(int key, t_data *data);
 /*------MOUSE-------*/
 void		zoom(int button, int x, int y, t_data *data);
 void		modify_complex(int button, int x, int y, t_data *data);

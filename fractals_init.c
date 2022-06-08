@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:00:08 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 21:07:46 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:16:45 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ void	fractals_init(t_data *data)
 	else
 		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n - burning_ship\n",
 			data);
+	data->start.r_min = data->r_min;
+	data->start.r_max = data->r_max;
+	data->start.i_min = data->i_min;
+	data->start.i_max = data->i_max;
+	data->escape = 16.0;
 }
 
 static void	init_mandelbrot(t_data *data)

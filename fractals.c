@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:46:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 21:19:31 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:13:32 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	mandelbrot(t_data *data, t_pixel *pixel)
 	ci = map_imaginary(pixel->y, data);
 	zr = 0;
 	zi = 0;
-	while (pixel->iter < data->max_iter && ft_abs(zr + zi) < 16.0)
+	while (pixel->iter < data->max_iter && ft_abs(zr + zi) < data->escape)
 	{
 		temp = zr * zr - zi * zi + cr;
 		zi = 2.0 * zr * zi + ci;
@@ -58,12 +58,13 @@ static int	julia(t_data *data, t_pixel *pixel)
 	long double	zr;
 	long double	zi;
 	long double	temp;
-//need to figure out how to stop the value shift when zooming and moving
-	cr = map_real(data->mouse_x, data);
-	ci = map_imaginary(data->mouse_y, data);
+	cr = ((long double)data->mouse_x * ((data->start.r_max - data->start.r_min)
+			/ WIN_WIDTH) + data->start.r_min);
+	ci = ((long double)data->mouse_y * ((data->start.i_max - data->start.i_min) 
+			/ WIN_HEIGHT) + data->start.i_min);
 	zr = map_real(pixel->x, data);
 	zi = map_imaginary(pixel->y, data);
-	while (pixel->iter < data->max_iter && zr * zr + zi * zi < 16.0)
+	while (pixel->iter < data->max_iter && zr * zr + zi * zi < data->escape)
 	{
 		temp = zr * zr - zi * zi + cr;
 		zi = 2.0 * zr * zi + ci;
@@ -87,7 +88,7 @@ static int	burning_ship(t_data *data, t_pixel *pixel)
 	ci = map_imaginary(pixel->y, data);
 	zr = cr;
 	zi = ci;
-	while (pixel->iter < data->max_iter && zr * zr + zi * zi < 4.0)
+	while (pixel->iter < data->max_iter && zr * zr + zi * zi < data->escape)
 	{
 		temp = zr * zr - zi * zi + cr;
 		zi = fabsl(2.0 * zr * zi) + ci;
