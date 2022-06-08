@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:03:10 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 12:43:17 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:52:59 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int	iter_color(t_data *data, int iter)
 
 int	distance_color(t_data *data, long double distance)
 {
-	return (distance * 10);
+	return (distance * GREEN);
 }

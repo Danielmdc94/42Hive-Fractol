@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 13:52:29 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:55:57 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef struct s_data{
 	long double	zoom;
 	long double	distance;
 	int			color_mode;
+//	int			color_base;
 }				t_data;
 
 /*------THREAD------*/
