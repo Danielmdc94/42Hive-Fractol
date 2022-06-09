@@ -6,13 +6,15 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 19:51:39 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:15:12 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
 static void	get_pixel(t_thread *structs);
+static void	fractal_to_window(t_data *data);
+static void	display_ui(t_data *data);
 
 void	screen_threads(t_data *data)
 {
@@ -59,23 +61,43 @@ static void	get_pixel(t_thread *structs)
 	}
 }
 
-void	fractal_to_window(t_data *data)
+static void	fractal_to_window(t_data *data)
 {
-	char	*temp;
-
 	mlx_clear_window(data->mlx, data->win);
 	screen_threads(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
-	temp = ft_itoa(data->max_iter);
-	mlx_string_put(data->mlx, data->win, 25, 15, WHITE, temp);
-	free(temp);
-	temp = ft_itoa(data->zoom);
-	mlx_string_put(data->mlx, data->win, 25, 40, WHITE, temp);
-	free(temp);
+	display_ui(data);
 }
 
 int	render_frame(t_data *data)
 {
 	fractal_to_window(data);
 	return (1);
+}
+
+static void	display_ui(t_data *data)
+{
+	char	*temp;
+
+	temp = ft_itoa(data->max_iter);
+	mlx_string_put(data->mlx, data->win, 25, 15, WHITE, "Max. iterations:");
+	mlx_string_put(data->mlx, data->win, 195, 15, WHITE, temp);
+	temp = ft_itoa(data->zoom);
+	mlx_string_put(data->mlx, data->win, 25, 40, WHITE, "Zoom level:");
+	mlx_string_put(data->mlx, data->win, 145, 40, WHITE, temp);
+	temp = ft_itoa(data->escape);
+	mlx_string_put(data->mlx, data->win, 25, 65, WHITE, "Escape value:");
+	mlx_string_put(data->mlx, data->win, 165, 65, WHITE, temp);
+	free(temp);
+	mlx_string_put(data->mlx, data->win, 25, 865, WHITE, "Quit program: ESC");
+	mlx_string_put(data->mlx, data->win, 25, 890, WHITE, "Move: Dir. arrows");
+	mlx_string_put(data->mlx, data->win, 25, 915, WHITE, "Max iter: - & +");
+	mlx_string_put(data->mlx, data->win, 25, 940, WHITE, "Escape val: [ & ]");
+	mlx_string_put(data->mlx, data->win, 25, 965, WHITE,
+		"Color method: 'option'");
+	mlx_string_put(data->mlx, data->win, 700, 940, WHITE, "Zoom: Mouse wheel");
+	mlx_string_put(data->mlx, data->win, 700, 965, WHITE,
+		"Lock Julia: Left click");
+	mlx_string_put(data->mlx, data->win, 700, 15, WHITE,
+		"Change fractal: 0, 1, 2 & 3");
 }

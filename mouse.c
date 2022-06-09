@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:54:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 21:08:20 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:04:10 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	zoom(int button, int x, int y, t_data *data)
 
 	x_map = map_real(x, data);
 	y_map = map_imaginary(y, data);
-	if (button == 4)
+	if (button == 4 && data->zoom < 375)
 	{
 		data->r_min += fabsl(data->r_min - x_map) * ZOOM;
 		data->r_max -= fabsl(data->r_max - x_map) * ZOOM;
@@ -27,7 +27,7 @@ void	zoom(int button, int x, int y, t_data *data)
 		data->i_max -= fabsl(data->i_max - y_map) * ZOOM;
 		data->zoom++;
 	}
-	if (button == 5)
+	if (button == 5 && data->zoom > -50)
 	{
 		data->r_min -= fabsl(data->r_min - x_map) * ZOOM;
 		data->r_max += fabsl(data->r_max - x_map) * ZOOM;

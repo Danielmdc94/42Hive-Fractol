@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:40:52 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/03 21:12:19 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:13:09 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ int	main(int argc, char **argv)
 		data.fractal = 1;
 	else if (ft_strcmp(argv[1], "burning_ship") == 0)
 		data.fractal = 2;
+	else if (ft_strcmp(argv[1], "burning_julia") == 0)
+		data.fractal = 3;
+	else
+		data.fractal = -1;
 	data_init(&data);
 	hook_control(&data);
 }
