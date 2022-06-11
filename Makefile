@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 15:37:29 by dpalacio          #+#    #+#              #
-#    Updated: 2022/06/03 21:50:04 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/06/09 17:56:50 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = clang
 
 CFLAGS = -Wall -Wextra -Werror -flto -lpthread
 
-INCLUDES = -I ./libft/ -I /usr/local/include
+INCLUDES = -I ./libft/ -I ./minilibx #-I /usr/local/include
 
 LIBFT = -L ./libft -lft #-L /usr/local/lib/ -lmlx
 
@@ -35,6 +35,9 @@ all: $(NAME)
 $(NAME):
 	@make -C libft/ re
 	$(CC) $(INCLUDES) $(SRC) $(MINXLIB) $(LIBFT) -o $(NAME)
+
+%.o: %.c
+	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
 
 clean:
 	@make -C libft/ clean
