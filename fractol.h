@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 15:55:57 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/11 15:33:06 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@
 # define MAGENTA	0xFF00FF
 
 /*-STARTING VALUES--*/
-typedef struct s_start{
+typedef struct s_start
+{
 	long double	r_min;
 	long double	r_max;
 	long double	i_min;
@@ -42,7 +43,8 @@ typedef struct s_start{
 }				t_start;
 
 /*-------DATA-------*/
-typedef struct s_data{
+typedef struct s_data
+{
 	void		*mlx;
 	void		*win;
 	void		*img;
@@ -66,8 +68,15 @@ typedef struct s_data{
 	long double	zoom;
 	long double	distance;
 	int			color_mode;
-//	int			color_base;
 }				t_data;
+
+typedef struct s_color
+{
+	int			a;
+	int			r;
+	int			g;
+	int			b;
+}				t_color;
 
 /*------THREAD------*/
 typedef struct s_thread
@@ -130,5 +139,7 @@ void		mouse_lock(int button, int x, int y, t_data *data);
 int			color(t_data *data, t_pixel *pixel);
 int			iter_color(t_data *data, int iter);
 int			distance_color(t_data *data, long double distance);
+t_color		int_to_argb(int color);
+int			argb_to_int(int a, int r, int g, int b);
 
 #endif
