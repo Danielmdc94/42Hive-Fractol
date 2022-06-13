@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 15:37:29 by dpalacio          #+#    #+#              #
-#    Updated: 2022/06/13 13:55:13 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/06/13 14:53:53 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,11 @@ CC = clang
 
 CFLAGS = -Wall -Wextra -Werror -flto -lpthread
 
-INCLUDES = -I ./libft/ -I ./minilibx #-I /usr/local/include
+INCLUDES = -I ./libft/ -I ./minilibx/
 
-LIBFT = -L ./libft -lft #-L /usr/local/lib/ -lmlx
+LIBFT = -L ./libft -lft
 
 MINXLIB = -L ./minilibx -lmlx -framework AppKit -framework OpenGL
-
-
-#FW = -framework OpenGL -framework AppKit
 
 SRC = main.c mlx.c fractals_init.c controls.c keyboard.c mouse.c \
 	  utils.c color.c screen_threads.c fractals.c

@@ -6,13 +6,13 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 13:52:02 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:38:50 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-//Holds the hooks for every event controlling the program
+/* Holds the hooks for every event controlling the program */
 void	hook_control(t_data *data)
 {
 	mlx_hook(data->win, 2, 0, on_keydown, data);
@@ -23,7 +23,7 @@ void	hook_control(t_data *data)
 	mlx_loop(data->mlx);
 }
 
-//Colors the pixel in the coordinates (X, Y) of a given image
+/* Colors the pixel in the coordinates (X, Y) of a given image */
 void	img_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*pixel;
@@ -40,7 +40,8 @@ void	img_pixel_put(t_data *data, int x, int y, int color)
 	}
 }
 
-//Initializes necesary data for ploting and drawing the fractal
+/* Initializes necesary the mlx window and an image to draw
+ * in, then calls fractals_init for ploting the fractals */
 void	data_init(t_data *data)
 {
 	data->mlx = mlx_init();

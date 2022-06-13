@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 14:12:27 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:41:24 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static void	get_pixel(t_thread *structs);
 static void	fractal_to_window(t_data *data);
 static void	display_ui(t_data *data);
 
+/* Creates 10 threads so that each takes care of rendering 1/10th of the screen
+ * by calling get_pixel() */
 void	screen_threads(t_data *data)
 {
 	pthread_t	threads[10];
@@ -38,6 +40,9 @@ void	screen_threads(t_data *data)
 	}
 }
 
+/* Iterates through every pixel(depending on the thread) and applies the
+ * correspondent fractal ecuation on it by calling choose_fractal(), then,
+ * based on its result, picks a color to put on each pixel by callin color() */
 static void	get_pixel(t_thread *structs)
 {
 	t_pixel	pixel;
@@ -61,20 +66,18 @@ static void	get_pixel(t_thread *structs)
 	}
 }
 
-static void	fractal_to_window(t_data *data)
+/* Called once per frame, clears the window and redraws on it by calling
+ * screen_threads() and dislay_ui() */
+int	render_frame(t_data *data)
 {
 	mlx_clear_window(data->mlx, data->win);
 	screen_threads(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 	display_ui(data);
-}
-
-int	render_frame(t_data *data)
-{
-	fractal_to_window(data);
 	return (1);
 }
 
+/* Draws the controls and related info on the screen */
 static void	display_ui(t_data *data)
 {
 	char	*temp;

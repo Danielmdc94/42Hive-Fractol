@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:00:08 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 14:33:40 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:37:14 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	init_mandelbrot(t_data *data);
 static void	init_julia(t_data *data);
 static void	init_burning_ship(t_data *data);
 
+/* Picks a funtion to plot the window depending on the current fractal */
 void	fractals_init(t_data *data)
 {
 	if (data->fractal == 0)
@@ -58,9 +59,9 @@ static void	init_julia(t_data *data)
 static void	init_burning_ship(t_data *data)
 {
 	data->r_min = -2;
-	data->r_max = 0.5;
-	data->i_min = -1.25;
-	data->i_max = 1.25;
+	data->r_max = 1;
+	data->i_min = -1.5;
+	data->i_max = 1.5;
 	data->max_iter = 50;
 	data->zoom = 1.0;
 }

@@ -6,12 +6,14 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:14:53 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 14:50:51 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:46:37 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+/* Changes the ploting values to "move" the fractal by
+ * pressing the arrow keys */
 void	move_camera(int key, t_data *data)
 {
 	long double	r_move;
@@ -41,6 +43,8 @@ void	move_camera(int key, t_data *data)
 	}
 }
 
+/* Changes the maximum number of iterations the fractal ecuations
+ * complete before exiting the loop by presing + or - */
 void	max_iter(int key, t_data *data)
 {
 	if (key == 27 && data->max_iter > 0)
@@ -49,6 +53,8 @@ void	max_iter(int key, t_data *data)
 		data->max_iter = data->max_iter + 1;
 }
 
+/* Changes the coloring method from iterations to distance and the other
+ * way around by pressing the 'option' key */
 void	change_colors(int key, t_data *data)
 {
 	if (key == 262)
@@ -60,6 +66,7 @@ void	change_colors(int key, t_data *data)
 	}
 }
 
+/* Changes the fractal to be drawn with the keys 0, 1, 2 and 3 */
 void	change_fractal(int key, t_data *data)
 {
 	if (key == 82)
@@ -73,6 +80,8 @@ void	change_fractal(int key, t_data *data)
 	fractals_init(data);
 }
 
+/* Changes the value of "infinity" determining when the ecuation escapes
+ * such value by pressing [ or ] */
 void	change_escape(int key, t_data *data)
 {
 	if (key == 33 && data->escape > 0)

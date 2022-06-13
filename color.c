@@ -6,12 +6,15 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:03:10 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 14:19:59 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:46:48 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+/* Chooses a coloring method based on the number of iterations of the
+ * ecuation on the given pixel or based on the distance to the orbit trap,
+ * depending on the selected method */
 int	color(t_data *data, t_pixel *pixel)
 {
 	if (data->color_mode == 0)

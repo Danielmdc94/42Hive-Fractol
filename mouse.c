@@ -6,12 +6,14 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:54:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 13:04:10 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:40:45 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+/* Changes the ploting values to "zoom" on the fractal by
+ * rolling the mouse wheel front and back */
 void	zoom(int button, int x, int y, t_data *data)
 {
 	double	x_map;
@@ -37,6 +39,8 @@ void	zoom(int button, int x, int y, t_data *data)
 	}
 }
 
+/* Stops recording the position of the mouse so julia sets can be
+ * explored statically */
 void	mouse_lock(int button, int x, int y, t_data *data)
 {
 	if (data->mouse_lock == 0)

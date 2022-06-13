@@ -6,12 +6,13 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:17:24 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 15:00:04 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:36:18 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+/* Calls a corresponding function when a defined key is pressed */
 int	on_keydown(int key, t_data *data)
 {
 	if (key == 53)
@@ -28,27 +29,21 @@ int	on_keydown(int key, t_data *data)
 		change_fractal(key, data);
 	if (key == 33 || key == 30)
 		change_escape(key, data);
-	ft_putnbr(key);
-	ft_putchar('\n');
 	return (1);
 }
 
+/* Calls a corresponding function when a defined mouse button is pressed
+ * or the wheel is rolled */
 int	on_mousedown(int button, int x, int y, t_data *data)
 {
 	if (button == 4 || button == 5)
 		zoom(button, x, y, data);
 	if (button == 1)
 		mouse_lock(button, x, y, data);
-	ft_putnbr(button);
-	ft_putchar('\n');
 	return (1);
 }
 
-int	on_mouseup(int button, int x, int y, t_data *data)
-{
-	return (1);
-}
-
+/* Records the position of the mouse every time it moves */
 int	on_mousemove(int x, int y, t_data *data)
 {
 	if (data->mouse_lock == 0)

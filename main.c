@@ -6,18 +6,20 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:40:52 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 15:13:09 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:38:26 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+/* Is called in case of an error and prints the message given */
 void	e_print_exit(char *e_string, t_data *data)
 {
 	ft_putendl(e_string);
 	exit_fractol(data);
 }
 
+/* Quits the program after freeing the data structure */
 int	exit_fractol(t_data *data)
 {
 	exit(0);
@@ -25,6 +27,8 @@ int	exit_fractol(t_data *data)
 	return (1);
 }
 
+/* Start of the program, checks that the argument given is valid
+ * and calls the initializing function before hooking to events */
 int	main(int argc, char **argv)
 {
 	t_data	data;

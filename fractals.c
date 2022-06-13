@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:46:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 13:54:59 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:36:31 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	julia(t_data *data, t_pixel *pixel);
 static int	burning_ship(t_data *data, t_pixel *pixel);
 static int	burning_julia(t_data *data, t_pixel *pixel);
 
+/* Depending on the given data, choses a fractal ecuation to
+ * apply iteratively on the given pixel */
 int	choose_fractal(t_data *data, t_pixel *pixel)
 {
 	if (data->fractal == 0)
