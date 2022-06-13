@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/08 15:15:12 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:12:27 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,11 @@ static void	display_ui(t_data *data)
 	temp = ft_itoa(data->max_iter);
 	mlx_string_put(data->mlx, data->win, 25, 15, WHITE, "Max. iterations:");
 	mlx_string_put(data->mlx, data->win, 195, 15, WHITE, temp);
+	free(temp);
 	temp = ft_itoa(data->zoom);
 	mlx_string_put(data->mlx, data->win, 25, 40, WHITE, "Zoom level:");
 	mlx_string_put(data->mlx, data->win, 145, 40, WHITE, temp);
+	free(temp);
 	temp = ft_itoa(data->escape);
 	mlx_string_put(data->mlx, data->win, 25, 65, WHITE, "Escape value:");
 	mlx_string_put(data->mlx, data->win, 165, 65, WHITE, temp);

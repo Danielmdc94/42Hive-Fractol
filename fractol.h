@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/11 15:33:06 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:33:56 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@
 # define WHITE		0xFFFFFF
 # define BLACK		0x000000
 # define RED		0xFF0000
-# define GREEN		0x00FF00
 # define BLUE		0x0000FF
-# define YELLOW		0xFFFF00
-# define CYAN		0x00FFFF
-# define MAGENTA	0xFF00FF
 
 /*-STARTING VALUES--*/
 typedef struct s_start
@@ -58,8 +54,6 @@ typedef struct s_data
 	long double	i_min;
 	long double	i_max;
 	t_start		start;
-	long double	cr;
-	long double	ci;
 	long double	escape;
 	int			mouse_x;
 	int			mouse_y;
@@ -69,14 +63,6 @@ typedef struct s_data
 	long double	distance;
 	int			color_mode;
 }				t_data;
-
-typedef struct s_color
-{
-	int			a;
-	int			r;
-	int			g;
-	int			b;
-}				t_color;
 
 /*------THREAD------*/
 typedef struct s_thread
@@ -130,6 +116,7 @@ void		max_iter(int key, t_data *data);
 void		change_colors(int key, t_data *data);
 void		change_fractal(int key, t_data *data);
 void		change_escape(int key, t_data *data);
+
 /*------MOUSE-------*/
 void		zoom(int button, int x, int y, t_data *data);
 void		modify_complex(int button, int x, int y, t_data *data);
@@ -139,7 +126,5 @@ void		mouse_lock(int button, int x, int y, t_data *data);
 int			color(t_data *data, t_pixel *pixel);
 int			iter_color(t_data *data, int iter);
 int			distance_color(t_data *data, long double distance);
-t_color		int_to_argb(int color);
-int			argb_to_int(int a, int r, int g, int b);
 
 #endif
