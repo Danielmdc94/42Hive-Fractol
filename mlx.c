@@ -6,13 +6,14 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 14:39:22 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 15:03:37 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-/* Holds the hooks for every event controlling the program */
+/* Holds the hooks for every event controlling the program,
+ * including the rendering loop */
 void	hook_control(t_data *data)
 {
 	mlx_hook(data->win, 2, 0, on_keydown, data);

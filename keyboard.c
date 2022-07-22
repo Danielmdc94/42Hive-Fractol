@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:14:53 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 13:28:34 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 15:08:38 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	change_colors(int key, t_data *data)
 	}
 }
 
-/* Changes the fractal to be drawn with the keys 0, 1, 2 and 3 */
+/* Changes the fractal to be drawn with the numpad */
 void	change_fractal(int key, t_data *data)
 {
 	if (key == 82)

@@ -6,13 +6,14 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:40:52 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 14:49:25 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:58:34 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-/* Is called in case of an error and prints the message given */
+/* Is called in case of an error and prints the message given,
+ * then, exits the program */
 void	e_print_exit(char *e_string)
 {
 	ft_putendl(e_string);
