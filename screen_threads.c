@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 14:01:26 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:45:19 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ void	screen_threads(t_data *data)
 	{
 		structs[id].id = id;
 		structs[id].data = data;
-		pthread_create(&threads[id], NULL, (void *)get_pixel,
-			(void *)&structs[id]);
+		if (pthread_create(&threads[id], NULL, (void *)get_pixel,
+				(void *)&structs[id]) != 0)
+			e_print_exit("Error: Failed to create thread");
 		id++;
 	}
 	while (id >= 0)

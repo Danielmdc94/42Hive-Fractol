@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 13:20:28 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:44:46 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ typedef struct s_pixel
 }				t_pixel;
 
 /*-------MAIN-------*/
-void		e_print_exit(char *e_string, t_data *data);
-int			exit_fractol(t_data *data);
+void		e_print_exit(char *e_string);
+int			exit_fractol(void);
 
 /*-------MLX--------*/
 void		hook_control(t_data *data);

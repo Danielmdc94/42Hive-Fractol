@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:17:24 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 13:28:01 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:47:28 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	on_keydown(int key, t_data *data)
 {
 	if (key == 53)
-		exit_fractol(data);
+		exit_fractol();
 	if (key == 123 || key == 124 || key == 125 || key == 126)
 		move_camera(key, data);
 	if (key == 24 || key == 27)

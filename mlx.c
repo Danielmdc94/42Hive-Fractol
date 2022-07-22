@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 16:38:50 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:39:22 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	img_pixel_put(t_data *data, int x, int y, int color)
 		pixel = data->img_addr + (y * data->line_bytes)
 			+ (x * (data->px_bits / 8));
 		if (pixel == NULL)
-			e_print_exit("Error(1): Bad allocated pixel", data);
+			e_print_exit("Error: Bad allocated pixel");
 		*(unsigned int *)pixel = color;
 	}
 }

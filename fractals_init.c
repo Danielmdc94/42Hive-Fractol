@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:00:08 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 13:33:15 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:49:15 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	fractals_init(t_data *data)
 	else if (data->fractal == 2 || data->fractal == 5)
 		init_burning_ship(data);
 	else
-		e_print_exit("Valid fractals:\n - mandelbrot\n - julia\n - burning_ship\n \
-- burning_julia\n - melt_mandelbrot\n - melt_ship\n - celtic\n - melt_celtic",
-			data);
+		e_print_exit("Usage: ./fractol <fractal_name>\n\nValid fractals:\n\
+ - mandelbrot\n - julia\n - burning_ship\n - burning_julia\n\
+ - melt_mandelbrot\n - melt_ship\n - celtic\n - melt_celtic");
 	data->start.r_min = data->r_min;
 	data->start.r_max = data->r_max;
 	data->start.i_min = data->i_min;

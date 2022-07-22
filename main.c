@@ -6,21 +6,21 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:40:52 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 13:20:36 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:49:25 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
 /* Is called in case of an error and prints the message given */
-void	e_print_exit(char *e_string, t_data *data)
+void	e_print_exit(char *e_string)
 {
 	ft_putendl(e_string);
-	exit_fractol(data);
+	exit_fractol();
 }
 
-/* Quits the program after freeing the data structure */
-int	exit_fractol(t_data *data)
+/* Quits the program */
+int	exit_fractol(void)
 {
 	exit(0);
 	return (1);
@@ -33,7 +33,9 @@ int	main(int argc, char **argv)
 	t_data	data;
 
 	if (argc != 2)
-		e_print_exit("Usage: ./fractol <fractal_name>", &data);
+		e_print_exit("Usage: ./fractol <fractal_name>\n\nValid fractals:\n\
+ - mandelbrot\n - julia\n - burning_ship\n - burning_julia\n\
+ - melt_mandelbrot\n - melt_ship\n - celtic\n - melt_celtic");
 	if (ft_strcmp(argv[1], "mandelbrot") == 0)
 		data.fractal = 0;
 	else if (ft_strcmp(argv[1], "julia") == 0)
