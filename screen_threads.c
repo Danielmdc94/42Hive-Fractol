@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 16:41:24 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:01:26 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ static void	display_ui(t_data *data)
 	mlx_string_put(data->mlx, data->win, 700, 940, WHITE, "Zoom: Mouse wheel");
 	mlx_string_put(data->mlx, data->win, 700, 965, WHITE,
 		"Lock Julia: Left click");
-	mlx_string_put(data->mlx, data->win, 700, 15, WHITE,
-		"Change fractal: 0, 1, 2 & 3");
+	mlx_string_put(data->mlx, data->win, 680, 15, WHITE,
+		"Change fractal: Num. Pad 0 - 7");
 }
