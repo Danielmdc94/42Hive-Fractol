@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:14:53 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 16:46:37 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 13:28:34 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,14 @@ void	change_fractal(int key, t_data *data)
 		data->fractal = 2;
 	if (key == 85)
 		data->fractal = 3;
+	if (key == 86)
+		data->fractal = 4;
+	if (key == 87)
+		data->fractal = 5;
+	if (key == 88)
+		data->fractal = 6;
+	if (key == 89)
+		data->fractal = 7;
 	fractals_init(data);
 }
 

@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 15:37:29 by dpalacio          #+#    #+#              #
-#    Updated: 2022/06/13 14:53:53 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/07/22 12:25:37 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ LIBFT = -L ./libft -lft
 MINXLIB = -L ./minilibx -lmlx -framework AppKit -framework OpenGL
 
 SRC = main.c mlx.c fractals_init.c controls.c keyboard.c mouse.c \
-	  utils.c color.c screen_threads.c fractals.c
+	  utils.c color.c screen_threads.c fractals.c fractals2.c
 
 OBJ = $(SRC:.c=.o)
 

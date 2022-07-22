@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:46:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 16:36:31 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 13:26:12 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ int	choose_fractal(t_data *data, t_pixel *pixel)
 		return (burning_ship(data, pixel));
 	else if (data->fractal == 3)
 		return (burning_julia(data, pixel));
+	else if (data->fractal == 4)
+		return (melt_mandelbrot(data, pixel));
+	else if (data->fractal == 5)
+		return (melt_ship(data, pixel));
+	else if (data->fractal == 6)
+		return (celtic(data, pixel));
+	else if (data->fractal == 7)
+		return (melt_celtic(data, pixel));
 	return (0);
 }
 

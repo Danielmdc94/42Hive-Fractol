@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:40:52 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/17 11:24:45 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 13:20:36 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,14 @@ int	main(int argc, char **argv)
 		data.fractal = 2;
 	else if (ft_strcmp(argv[1], "burning_julia") == 0)
 		data.fractal = 3;
+	else if (ft_strcmp(argv[1], "melt_mandelbrot") == 0)
+		data.fractal = 4;
+	else if (ft_strcmp(argv[1], "melt_ship") == 0)
+		data.fractal = 5;
+	else if (ft_strcmp(argv[1], "celtic") == 0)
+		data.fractal = 6;
+	else if (ft_strcmp(argv[1], "melt_celtic") == 0)
+		data.fractal = 7;
 	else
 		data.fractal = -1;
 	data_init(&data);

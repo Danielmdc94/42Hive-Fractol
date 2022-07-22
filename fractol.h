@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 16:33:35 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/22 13:20:28 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,10 @@ int			render_frame(t_data *data);
 
 /*-----FRACTALS-----*/
 int			choose_fractal(t_data *data, t_pixel *pixel);
+int			melt_mandelbrot(t_data *data, t_pixel *pixel);
+int			melt_ship(t_data *data, t_pixel *pixel);
+int			celtic(t_data *data, t_pixel *pixel);
+int			melt_celtic(t_data *data, t_pixel *pixel);
 
 /*--FRACTALS INIT---*/
 void		fractals_init(t_data *data);
