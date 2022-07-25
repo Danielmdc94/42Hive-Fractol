@@ -6,14 +6,14 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 14:44:46 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:41:02 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "libft/libft.h"
+# include "../libft/include/libft.h"
 # include "minilibx/mlx.h"
 # include <math.h>
 # include <pthread.h>
@@ -105,7 +105,7 @@ void		fractals_init(t_data *data);
 
 /*------UTILS-------*/
 long double	ft_abscomplex(long double zr, long double zi);
-long double	get_distance(t_data *data, long double zr, long double zi);
+long double	get_distance(long double zr, long double zi);
 long double	map_real(int x, t_data *data);
 long double	map_imaginary(int y, t_data *data);
 
@@ -124,11 +124,11 @@ void		change_escape(int key, t_data *data);
 /*------MOUSE-------*/
 void		zoom(int button, int x, int y, t_data *data);
 void		modify_complex(int button, int x, int y, t_data *data);
-void		mouse_lock(int button, int x, int y, t_data *data);
+void		mouse_lock(t_data *data);
 
 /*------COLOR-------*/
 int			color(t_data *data, t_pixel *pixel);
 int			iter_color(t_data *data, int iter);
-int			distance_color(t_data *data, long double distance);
+int			distance_color(long double distance);
 
 #endif

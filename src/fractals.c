@@ -6,11 +6,11 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:46:02 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 13:26:12 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:43:34 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 static int	mandelbrot(t_data *data, t_pixel *pixel);
 static int	julia(t_data *data, t_pixel *pixel);
@@ -59,7 +59,7 @@ static int	mandelbrot(t_data *data, t_pixel *pixel)
 		zr = temp;
 		pixel->iter++;
 	}
-	pixel->distance = get_distance(data, zr, zi);
+	pixel->distance = get_distance(zr, zi);
 	return (pixel->iter);
 }
 
@@ -84,7 +84,7 @@ static int	julia(t_data *data, t_pixel *pixel)
 		zr = temp;
 		pixel->iter++;
 	}
-	pixel->distance = get_distance(data, zr, zi);
+	pixel->distance = get_distance(zr, zi);
 	return (pixel->iter);
 }
 
@@ -107,7 +107,7 @@ static int	burning_ship(t_data *data, t_pixel *pixel)
 		zr = (temp);
 		pixel->iter++;
 	}
-	pixel->distance = get_distance(data, zr, zi);
+	pixel->distance = get_distance(zr, zi);
 	return (pixel->iter);
 }
 
@@ -132,6 +132,6 @@ static int	burning_julia(t_data *data, t_pixel *pixel)
 		zr = (temp);
 		pixel->iter++;
 	}
-	pixel->distance = get_distance(data, zr, zi);
+	pixel->distance = get_distance(zr, zi);
 	return (pixel->iter);
 }

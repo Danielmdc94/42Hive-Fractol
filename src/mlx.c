@@ -6,11 +6,11 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 15:03:37 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:34:49 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 /* Holds the hooks for every event controlling the program,
  * including the rendering loop */

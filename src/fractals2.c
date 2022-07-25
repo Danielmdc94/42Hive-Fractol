@@ -6,11 +6,11 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 12:05:05 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 13:25:53 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:48:22 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 int	melt_mandelbrot(t_data *data, t_pixel *pixel)
 {
@@ -33,7 +33,7 @@ int	melt_mandelbrot(t_data *data, t_pixel *pixel)
 		zr = temp;
 		pixel->iter++;
 	}
-	pixel->distance = get_distance(data, zr, zi);
+	pixel->distance = get_distance(zr, zi);
 	return (pixel->iter);
 }
 
@@ -58,7 +58,7 @@ int	melt_ship(t_data *data, t_pixel *pixel)
 		zr = (temp);
 		pixel->iter++;
 	}
-	pixel->distance = get_distance(data, zr, zi);
+	pixel->distance = get_distance(zr, zi);
 	return (pixel->iter);
 }
 
@@ -81,7 +81,7 @@ int	celtic(t_data *data, t_pixel *pixel)
 		zr = (temp);
 		pixel->iter++;
 	}
-	pixel->distance = get_distance(data, zr, zi);
+	pixel->distance = get_distance(zr, zi);
 	return (pixel->iter);
 }
 
@@ -106,6 +106,6 @@ int	melt_celtic(t_data *data, t_pixel *pixel)
 		zr = (temp);
 		pixel->iter++;
 	}
-	pixel->distance = get_distance(data, zr, zi);
+	pixel->distance = get_distance(zr, zi);
 	return (pixel->iter);
 }

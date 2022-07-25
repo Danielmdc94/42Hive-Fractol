@@ -6,13 +6,24 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 15:57:53 by dpalacio          #+#    #+#              #
-#    Updated: 2022/04/01 14:37:23 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/06/15 15:17:02 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror
-SRC = ft_memset.c\
+CC = gcc
+FLAGS = -c -Wall -Wextra -Werror
+
+INCLUDE = -I$(HEADERS_DIR)
+
+HEADERS_LIST = \
+	libft.h \
+	get_next_line.h
+HEADERS_DIR = ./include/
+HEADERS = $(addprefix $(HEADERS_DIR), $(HEADERS_LIST))
+
+SRC_DIR = ./src/
+SRC_LIST = ft_memset.c\
 	  ft_bzero.c\
 	  ft_memcpy.c\
 	  ft_memccpy.c\
@@ -80,20 +91,30 @@ SRC = ft_memset.c\
 	  ft_atoi_base.c\
 	  ft_count_words.c\
 	  ft_lstadd_back.c\
-	  get_next_line.c\
+	  get_next_line.c
+SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 
-INCLUDE = ./
+OBJ_DIR = ./obj/
+OBJ_LIST = $(patsubst %.c, %.o, $(SRC_LIST))
+OBJ = $(addprefix $(OBJ_DIR), $(OBJ_LIST))
+
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c $(FLAGS) -I$(INCLUDE) $(SRC)
-	ar rc $(NAME) *.o
+$(NAME): $(OBJ_DIR) $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)%.o : $(SRC_DIR)%.c $(HEADERS)
+	@$(CC) $(FLAGS) $(INCLUDE) $< -o $@
 
 clean:
-	rm -f *.o
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all

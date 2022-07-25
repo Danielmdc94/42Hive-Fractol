@@ -6,11 +6,11 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:34:32 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/06/13 16:46:22 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:38:32 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 /* Gets the absolute value of a complex number where the first argument
  * is the real value and the second is the imaginary */
@@ -23,7 +23,7 @@ long double	ft_abscomplex(long double zr, long double zi)
 }
 
 /* Gets the distance to the orbit trap of a point within the complex plain */
-long double	get_distance(t_data *data, long double zr, long double zi)
+long double	get_distance(long double zr, long double zi)
 {
 	long double	distance;
 	long double	z_point;

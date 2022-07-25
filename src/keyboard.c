@@ -6,11 +6,11 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:14:53 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 15:08:38 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:35:46 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 /* Changes the ploting values to "move" the fractal by
  * pressing the arrow keys */

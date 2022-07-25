@@ -6,14 +6,13 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:37:41 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 15:07:57 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:42:10 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 static void	get_pixel(t_thread *structs);
-static void	fractal_to_window(t_data *data);
 static void	display_ui(t_data *data);
 
 /* Creates 10 threads so that each takes care of rendering 1/10th of the screen

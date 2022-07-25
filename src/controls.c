@@ -6,11 +6,11 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:17:24 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/22 14:47:28 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:37:06 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 /* Calls a corresponding function when a defined key is pressed */
 int	on_keydown(int key, t_data *data)
@@ -39,7 +39,7 @@ int	on_mousedown(int button, int x, int y, t_data *data)
 	if (button == 4 || button == 5)
 		zoom(button, x, y, data);
 	if (button == 1)
-		mouse_lock(button, x, y, data);
+		mouse_lock(data);
 	return (1);
 }
 
