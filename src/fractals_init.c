@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:00:08 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/25 19:35:09 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:23:55 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static void	init_mandelbrot(t_data *data);
 static void	init_julia(t_data *data);
 static void	init_burning_ship(t_data *data);
 
-/* Picks a funtion to plot the window depending on the current fractal */
+/* Picks a funtion to plot the window depending on the current fractal
+ * and initializes the plotting data and lock trigger*/
 void	fractals_init(t_data *data)
 {
 	if (data->fractal == 0 || data->fractal == 4 || data->fractal == 6
@@ -35,6 +36,9 @@ void	fractals_init(t_data *data)
 	data->start.i_min = data->i_min;
 	data->start.i_max = data->i_max;
 	data->escape = 16.0;
+	data->max_iter = 50;
+	data->mouse_lock = 0;
+	data->zoom = 1.0;
 }
 
 static void	init_mandelbrot(t_data *data)
@@ -43,8 +47,6 @@ static void	init_mandelbrot(t_data *data)
 	data->r_max = 0.5;
 	data->i_min = -1.25;
 	data->i_max = 1.25;
-	data->max_iter = 50;
-	data->zoom = 1.0;
 }
 
 static void	init_julia(t_data *data)
@@ -53,9 +55,6 @@ static void	init_julia(t_data *data)
 	data->r_max = 1.25;
 	data->i_min = -1.25;
 	data->i_max = 1.25;
-	data->max_iter = 50;
-	data->zoom = 1.0;
-	data->mouse_lock = 0;
 }
 
 static void	init_burning_ship(t_data *data)
@@ -64,6 +63,4 @@ static void	init_burning_ship(t_data *data)
 	data->r_max = 1;
 	data->i_min = -1.5;
 	data->i_max = 1.5;
-	data->max_iter = 50;
-	data->zoom = 1.0;
 }

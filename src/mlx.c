@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:21:04 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/25 19:34:49 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:23:53 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	img_pixel_put(t_data *data, int x, int y, int color)
 	}
 }
 
-/* Initializes necesary the mlx window and an image to draw
+/* Initializes necesary mlx window and an image to draw
  * in, then calls fractals_init for ploting the fractals */
 void	data_init(t_data *data)
 {

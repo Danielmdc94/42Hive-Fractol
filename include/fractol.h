@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:11:18 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/07/25 19:41:02 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:37:15 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRACTOL_H
 
 # include "../libft/include/libft.h"
-# include "minilibx/mlx.h"
+# include "../minilibx/mlx.h"
 # include <math.h>
 # include <pthread.h>
 
