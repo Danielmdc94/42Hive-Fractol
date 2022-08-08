@@ -6,13 +6,13 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 15:37:29 by dpalacio          #+#    #+#              #
-#    Updated: 2022/07/25 19:47:02 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/08/08 12:31:17 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -flto
+FLAGS = -Wall -Wextra -Werror -flto -pthread
 
 INCLUDE = -I $(LIBFT_HEADERS) -I $(MLX_DIR)
 
