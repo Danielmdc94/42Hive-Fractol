@@ -17,4 +17,12 @@
 
 <div>
 
+<img src="https://github.com/Danielmdc94/42Hive-Fractol/blob/master/Mandelbrot.jpg"/>
+<img src="https://github.com/Danielmdc94/42Hive-Fractol/blob/master/MandelbrotZoom.jpg"/>
+<img src="https://github.com/Danielmdc94/42Hive-Fractol/blob/master/Julia.jpg"/>
+<img src="https://github.com/Danielmdc94/42Hive-Fractol/blob/master/JuliaZoom.jpg"/>
+<img src="https://github.com/Danielmdc94/42Hive-Fractol/blob/master/BurningShip.jpg"/>
+<img src="https://github.com/Danielmdc94/42Hive-Fractol/blob/master/BurningJulia.jpg"/>
+<img src="https://github.com/Danielmdc94/42Hive-Fractol/blob/master/Celtic.jpg"/>
+
 </div>
